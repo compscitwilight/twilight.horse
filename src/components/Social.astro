@@ -1,0 +1,8 @@
+---
+const { handle, image, href } = Astro.props;
+---
+
+<a class="flex gap-1 items-center p-2 border border-fuchsia-300 transition-border duration-300 hover:border-fuchsia-400 rounded-lg justify-center" href={href} target="_blank">
+    <img class="w-[32px]" src={`/social_images/${image}`} />
+    <p class="font-bold">{handle}</p>
+</a>

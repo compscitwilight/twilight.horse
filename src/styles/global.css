@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+    --twilight-purple: #662F89;
+}
+
+body {
+    background-color: #07070A;
+    color: #fff;
+}
+
+.twilight-purple { color: var(--twilight-purple); }
+.border-twilight-purple { border-color: var(--twilight-purple); }

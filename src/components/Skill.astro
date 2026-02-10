@@ -1,0 +1,8 @@
+---
+const { name, image } = Astro.props;
+---
+
+<div class="flex gap-1 items-center font-bold border bg-gray-800/50 twilight-purple p-1 rounded-md w-fit">
+    <img class="w-[24px]" src={`/skill_images/${image}`} />
+    <p class="text-white">{name}</p>
+</div>
