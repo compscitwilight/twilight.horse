@@ -4,10 +4,26 @@
     --twilight-purple: #662F89;
 }
 
-body {
-    background-color: #07070A;
-    color: #fff;
+@font-face {
+    font-family: 'font-lr-bold';
+    src: url('/LexieReadable-Bold.ttf');
 }
 
-.twilight-purple { color: var(--twilight-purple); }
-.border-twilight-purple { border-color: var(--twilight-purple); }
+body {
+    background-color: #212027;
+    color: #fff;
+    font-family: font-lr-bold;
+}
+
+a {
+    color: lightskyblue;
+    text-decoration: underline;
+}
+
+.twilight-purple {
+    color: var(--twilight-purple);
+}
+
+.border-twilight-purple {
+    border-color: var(--twilight-purple);
+}

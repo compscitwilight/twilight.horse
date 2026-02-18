@@ -1,80 +1,184 @@
 ---
-import "../styles/global.css";
-
-import Topbar from "../components/Topbar.astro";
-import Skill from "../components/Skill.astro";
-import Social from "../components/Social.astro";
+import { ExternalLink } from "@lucide/astro";
+// import moment from "moment";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>twilight.horse</title>
-	</head>
-	<body class="grid gap-4 lg:w-3/4 my-4 m-auto">
-		<Topbar />
-		<div class="grid gap-4 border border-twilight-purple p-4">
-			<div class="gap-8" id="about">
-				<h2 class="text-2xl font-bold mb-2">about</h2>
-				<div class="flex gap-4">
-					<div class="flex gap-2">
-						<a
-							href="https://derpibooru.org/images/3634445"
-							target="_blank"
-						>
-							<img
-								class="rounded-full w-[128px] border-6 twilight-purple"
-								src="/avatar.png"
-							/>
+<MainLayout>
+	<div
+		class="flex flex-col sm:flex-row max-w-screen-md mx-auto justify-around items-center gap-16 sm:gap-0"
+	>
+		<a
+			title="art by unitxxvii"
+			href="https://derpibooru.org/3518770"
+			target="_blank"
+		>
+			<img class="m-auto w-[256px]" src="/3518770.png" />
+		</a>
+		<div>
+			<div>
+				<h1 class="text-3xl font-bold">compscitwilight</h1>
+				<p>developer & student</p>
+			</div>
+			<div class="mt-2">
+				<p>i like to build and manage things pony-related.</p>
+				<p>learn more about me and my projects below!</p>
+			</div>
+			<div class="flex gap-2 justify-center items-center px-16 py-4">
+				<a href="https://github.com/compscitwilight" target="_blank">
+					<img class="w-[32px]" src="/social_images/github.png" />
+				</a>
+				<a href="https://x.com/compscitwilight" target="_blank">
+					<img class="w-[32px]" src="/social_images/twitter.png" />
+				</a>
+				<a
+					href="https://discord.com/users/472530726613549066"
+					target="_blank"
+				>
+					<img
+						class="w-[32px] text-white"
+						src="/social_images/discord.svg"
+					/>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div
+		class="grid grid-cols-1 gap-8 place-content-center px-4 pt-16 pb-32 mx-auto max-w-screen-md text-center"
+	>
+		<div class="w-full">
+			<h2 class="text-2xl">projects!</h2>
+			<hr class="twilight-purple my-2" />
+			<div class="grid gap-8 my-2">
+				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
+					<div class="flex">
+						<h1 class="flex-1 text-xl">twilight.horse</h1>
+						<a href="https://twilight.horse" target="_blank">
+							<ExternalLink />
 						</a>
-						<div>
-							<h1 class="text-3xl font-bold">compscitwilight</h1>
-							<p>
-								Open-source software, student, community
-								infrastructure
-							</p>
-							<hr class="h-px my-2 border-0 bg-purple-600" />
-							<div class="flex gap-1 flex-wrap">
-								<Skill
-									name="TypeScript"
-									image="typescript.png"
-								/>
-								<Skill name="Golang" image="go.png" />
-								<Skill name="Python" image="python.png" />
-								<Skill name="Java" image="java.png" />
-								<Skill name="Lua" image="lua.png" />
-							</div>
-						</div>
 					</div>
-					<div class="grid gap-2 flex-1">
-						<Social
-							handle="compscitwilight"
-							href="https://x.com/@compscitwilight"
-							image="twitter.png"
+					<div>
+						<p>
+							my personal site that you're on right now! Built
+							using Astro and hosted with Cloudflare Pages. Source
+							code available <a
+								target="_blank"
+								href="https://github.com/compscitwilight/twilight.horse"
+								>here</a
+							>.
+						</p>
+					</div>
+					<div class="flex items-center gap-2">
+						<p class="text-xl">tech:</p>
+						<img class="w-[32px]" src="/skill_images/astro.png" />
+						<img
+							class="w-[32px]"
+							src="/skill_images/cloudflare.png"
 						/>
-						<Social
-							handle="compscitwilight"
-							href="https://github.com/compscitwilight"
-							image="github.png"
+					</div>
+				</div>
+				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
+					<div class="flex">
+						<h1 class="flex-1 text-xl">ponies.fyi</h1>
+						<a href="https://ponies.fyi" target="_blank">
+							<ExternalLink />
+						</a>
+					</div>
+					<div>
+						<p>
+							Modern <a
+								target="_blank"
+								href="https://github.com/compscitwilight/ponies.fyi"
+								>open-source</a
+							>, collaborative catalog for ponysonas and
+							fan-created characters. Built using TypeScript,
+							Next.js, Prisma, Supabase, and Cloudflare R2.
+						</p>
+					</div>
+					<div class="flex items-center gap-2">
+						<p class="text-xl">tech:</p>
+						<img
+							class="w-[32px]"
+							src="/skill_images/typescript.png"
 						/>
-						<Social
-							handle="compscitwilight"
-							href="https://discord.com/users/472530726613549066"
-							image="discord.png"
+						<img class="w-[32px]" src="/skill_images/next.js.png" />
+						<img
+							class="w-[32px]"
+							src="/skill_images/postgres.png"
+						/>
+						<img
+							class="w-[32px]"
+							src="/skill_images/cloudflare.png"
+						/>
+					</div>
+				</div>
+				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
+					<div class="flex">
+						<h1 class="flex-1 text-xl">PonyAggregate</h1>
+						<a href="https://ponyaggregate.com" target="_blank">
+							<ExternalLink />
+						</a>
+					</div>
+					<div>
+						<p>
+							Platform for archiving pony fandom content. Built
+							using a stack of TypeScript, Next.js, Prisma,
+							Supabase, and Cloudflare R2, and deployed with
+							Vercel.
+						</p>
+					</div>
+					<div class="flex items-center gap-2">
+						<p class="text-xl">tech:</p>
+						<img
+							class="w-[32px]"
+							src="/skill_images/typescript.png"
+						/>
+						<img class="w-[32px]" src="/skill_images/next.js.png" />
+						<img
+							class="w-[32px]"
+							src="/skill_images/postgres.png"
+						/>
+						<img
+							class="w-[32px]"
+							src="/skill_images/cloudflare.png"
 						/>
 					</div>
 				</div>
 			</div>
-			<div id="about"></div>
-			<div id="projects">
-				<h2 class="text-2xl font-bold mb-2">projects</h2>
-			</div>
-			<div id="contact">
-				<h2 class="text-2xl font-bold mb-2">contact</h2>
-			</div>
 		</div>
-	</body>
-</html>
+		<div>
+			<h2 class="text-2xl">conventions</h2>
+			<hr class="twilight-purple my-2" />
+			<p>
+				i recently attended HarmonyCon 2026 (and plan on attending
+				HarmonyCon 2027) and had loads of fun.
+			</p>
+			<p class="mt-4">
+				some photos of the trip can be seen <a href="/hc2026">here</a>
+			</p>
+		</div>
+		<div>
+			<h2 class="text-2xl">about me</h2>
+			<hr class="twilight-purple my-2" />
+			<ul class="list-disc text-lg pl-5">
+				<li>i'm 17 years old</li>
+				<li>based in the southern US</li>
+				<li>
+					i've been in the pony fandom for only 3 1/2 years (since
+					September 2022)
+				</li>
+				<li>i go by CompSciTwilight, Rust, Comp, etc</li>
+				<li>i am available to be part of any fandom projects, simply contact me using the address below</li>
+			</ul>
+		</div>
+		<div>
+			<h2 class="text-2xl">get in touch</h2>
+			<hr class="twilight-purple my-2" />
+			<p class="text-lg">
+				contact me directly at <a href="mailto:me@twilight.horse"
+					>compsci@twilight.horse</a
+				>
+			</p>
+		</div>
+	</div>
+</MainLayout>
