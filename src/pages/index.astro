@@ -2,6 +2,7 @@
 import { ExternalLink } from "@lucide/astro";
 // import moment from "moment";
 import MainLayout from "../layouts/MainLayout.astro";
+import Skill from "../components/Skill.astro";
 ---
 
 <MainLayout>
@@ -150,6 +151,82 @@ import MainLayout from "../layouts/MainLayout.astro";
 						/>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div>
+			<h2 class="text-2xl">skills</h2>
+			<hr class="twilight-purple my-2" />
+			<div class="grid lg:grid-cols-2 p-2 gap-4 sm:grid-cols-1">
+				<Skill
+					name="TypeScript"
+					image="/skill_images/typescript.png"
+					fluency="expert"
+				/>
+				<Skill
+					name="Python"
+					image="/skill_images/python.png"
+					fluency="expert"
+				/>
+				<Skill
+					name="Lua"
+					image="/skill_images/lua.png"
+					fluency="expert"
+				/>
+				<Skill
+					name="Node.js"
+					image="/skill_images/node.js.png"
+					fluency="expert"
+				/>
+				<Skill
+					name="Next"
+					image="/skill_images/next.js.png"
+					fluency="expert"
+				/>
+				<Skill
+					name="React"
+					image="/skill_images/react.png"
+					fluency="expert"
+				/>
+				<Skill
+					name="PostgreSQL"
+					image="/skill_images/postgres.png"
+					fluency="experienced"
+				/>
+				<Skill
+					name="Vue"
+					image="/skill_images/vue.js.png"
+					fluency="experienced"
+				/>
+				<Skill
+					name="Go"
+					image="/skill_images/go.png"
+					fluency="experienced"
+				/>
+				<Skill
+					name="Cloudflare Workers/R2"
+					image="/skill_images/cloudflare.png"
+					fluency="experienced"
+				/>
+				<Skill
+					name="Amazon Web Services"
+					image="/skill_images/aws.png"
+					fluency="experienced"
+				/>
+				<Skill
+					name="Astro"
+					image="/skill_images/astro.png"
+					fluency="medium"
+				/>
+				<Skill
+					name="C#"
+					image="/skill_images/cs.png"
+					fluency="medium"
+				/>
+				<Skill
+					name="Rust"
+					image="/skill_images/rust.png"
+					fluency="medium"
+				/>
 			</div>
 		</div>
 		<div>

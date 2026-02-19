@@ -1,0 +1,35 @@
+---
+type Fluency = "low" | "medium" | "experienced" | "expert";
+
+const { name, image, fluency } = Astro.props as {
+    name: string,
+    image: string,
+    fluency: Fluency
+};
+
+const fluencyColors = {
+    "low": "#F54927",
+    "medium": "#F5B027",
+    "experienced": "#27F5B0",
+    "expert": "#276CF5"
+};
+
+const fluencyWidth = {
+    "low": "25%",
+    "medium": "50%",
+    "experienced": "75%",
+    "expert": "100%"
+}
+---
+
+<div class="flex rounded-md bg-neutral-800/50 p-2">
+    <img class="w-[32px]" src={image} alt={name} />
+    <div class="flex-1 mx-8">
+        <h1 class="text-xl">{name}</h1>
+        <div style={{
+            backgroundColor: fluencyColors[fluency],
+            width: fluencyWidth[fluency]
+        }} class="bg-emerald-500 py-1">
+        </div>
+    </div>
+</div>
