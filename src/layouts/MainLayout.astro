@@ -23,7 +23,7 @@ import "../styles/global.css";
         <meta name="revisit-after" content="7 days" />
         <link rel="canonical" href="https://twilight.horse/" />
         <meta name="theme-color" content="#8D5DA4" />
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="website" />
         <meta
             property="og:description"
             content="Developer and student who likes to make pony-related things."
@@ -38,8 +38,25 @@ import "../styles/global.css";
         <title>twilight.horse</title>
     </head>
     <body
-        class="grid gap-4 min-h-screen min-w-screen my-8 bg-radial from-purple-900/25 to-indigo-900/25"
+        class="grid min-h-screen min-w-screen my-8 bg-radial from-purple-900/25 to-indigo-900/25"
     >
-        <slot />
+        <div class="max-w-screen-md mx-auto">
+            <div class="flex mb-4 lg:flex-row gap-4 text-lg">
+                <a class="flex-1" title="twilight.horse" href="/">
+                    <img id="wordmark" src="/wordmark.png" />
+                </a>
+                <div>
+                    <a
+                        href="/"
+                        class="text-white underline hover:text-indigo-600 transition-text duration-333 ease-in-out"
+                        >home</a
+                    >
+                    <a href="/commissions" class="text-emerald-300 underline"
+                        >{"bot commissions >>"}
+                    </a>
+                </div>
+            </div>
+            <slot />
+        </div>
     </body>
 </html>

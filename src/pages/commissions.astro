@@ -1,0 +1,247 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout>
+    <h1 class="text-3xl font-bold text-emerald-300">Bot commissions</h1>
+    <p>
+        I build custom Discord bots specifically for fandom Discord servers with
+        optional hosted on my own hardware.
+    </p>
+    <h2 class="text-2xl font-bold text-indigo-600 my-2">Bot pricing</h2>
+    <div class="grid gap-8">
+        <div>
+            <div class="flex items-center">
+                <h1 class="flex-1 text-xl font-bold">Fun Bot</h1>
+                <p>$25-40</p>
+            </div>
+            <ul>
+                <li>Welcome and farewell messages with customizable text</li>
+                <li>Up to 5 slash commands</li>
+                <li>Fun commands and novelty behavior</li>
+                <li>No database upkeep or persistent user data</li>
+                <li class="text-orange-300">
+                    Example features: greet/farewell bot, quote generator, 8ball
+                    command
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="flex items-center">
+                <h1 class="flex-1 text-xl font-bold">Utility Bot</h1>
+                <p>$60-80</p>
+            </div>
+            <ul>
+                <li>
+                    Database integration for persistent user data (e.g. levels,
+                    currency, etc)
+                </li>
+                <li>Up to 7 slash commands</li>
+                <li>
+                    External API integration (e.g. Derpibooru, weather APIs,
+                    etc)
+                </li>
+                <li>
+                    Multi-user features (e.g. a user leaderboard for whatever
+                    metric)
+                </li>
+                <li class="text-orange-300">
+                    Example features: leveling system, moderation/audit logging,
+                    Derpibooru image lookup, currency system
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="flex items-center">
+                <h1 class="flex-1 text-xl font-bold">Custom Bot</h1>
+                <p>$100+</p>
+            </div>
+            <ul>
+                <li>Both fun and utility bot features</li>
+                <li>7+ slash commands</li>
+                <li>Multi-system with significant custom logic</li>
+                <li>Persistent state across multiple features at once</li>
+                <li class="text-orange-300">
+                    Example features: full-fledged economy system, inventories,
+                    item shop, event tracker, multiple API integrations
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-2">
+        <p class="font-bold text-yellow-400">
+            Bot hosting fee: +$5/month per bot
+        </p>
+        <p class="font-bold text-yellow-400">
+            Database hosting fee: +$2/month per bot
+        </p>
+    </div>
+
+    <h2 class="text-2xl font-bold text-indigo-600 mt-2">Terms</h2>
+    <div class="grid gap-4">
+        <div class="flex gap-1">
+            <b class="text-lg">Payment:</b>
+            <p>
+                Development begins after full payment of the standalone bot (see
+                prices above). Hosting fees will be billed monthly via Ko-fi;
+                this will cover upkeep and maintenance. Hosting can be cancelled
+                at any time, to which you will receive the bot's source code
+                upon cancellation.
+            </p>
+        </div>
+        <div class="flex gap-1">
+            <b class="text-lg">Revisions:</b>
+            <p>
+                Three rounds of revisions will be part of every commission,
+                while additional revisions will be quoted separately.
+            </p>
+        </div>
+        <div class="flex gap-1">
+            <b class="text-lg">Ownership:</b>
+            <p>
+                You own the bot, its source code, and associated data. You can
+                request all of the above at any time.
+            </p>
+        </div>
+        <div class="flex gap-1">
+            <b class="text-lg">Hosting:</b>
+            <p>
+                I offer full-time hosting on my home server for a monthly fee
+                (see above). Although I don't guarantee 100% uptime, outages
+                will be addressed promptly, and backup solutions are in place in
+                case of anything catastrophic.
+            </p>
+        </div>
+        <div class="flex gap-1">
+            <b class="text-lg">Refunds:</b>
+            <p>
+                No refunds after development has begun. However, if I am unable
+                to complete the project for any reason, you will promptly
+                receive a full refund.
+            </p>
+        </div>
+
+        <div class="mt-6">
+            <div>
+                <b class="text-lg">What I won't do:</b>
+                <p>
+                    Bots designed to raid, spam, or harass other users or
+                    servers, or anything that violates Discord's terms of
+                    service.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-indigo-600 mt-2">Experience</h2>
+    <div class="grid gap-8 my-2">
+        <div>
+            <div class="flex flex-wrap">
+                <h1 class="flex-1 text-xl font-bold">SpookyPone</h1>
+                <p>Halloween event bot for the RandomPlace Discord server</p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-4">
+                <img
+                    class="showcase-image"
+                    src="/spookypone-demo.png"
+                    alt="Leaderboard command for SpookyPone being used within context"
+                />
+                <p>
+                    In Halloween of 2023, I built and maintained a Halloween
+                    event bot for a 500 member brony Discord server. It handled
+                    time-sensitive/orchestrated events, real-time user data
+                    tracking, and player leaderboards.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="flex flex-wrap">
+                <h1 class="flex-1 text-xl font-bold">BankingBot</h1>
+                <p>Full-featured economy bot in 99 servers</p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-4">
+                <img
+                    class="showcase-image"
+                    src="/bankingbot-demo.png"
+                    alt="BankingBot's profile command being used"
+                />
+                <p>
+                    I developed and maintained a full-featured economy bot with
+                    features such as inventories, leaderboards, an item shop,
+                    lotteries, gambling, and profiles. It reached approximately
+                    99 servers through organic discovery with paying users.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-indigo-600 mt-2">Inquiries</h2>
+    <p>
+        If you're interested in commissioning me for a bot for your server or a
+        server you're an administrator in, complete the intake form below to
+        start the commission process, or contact me directly via <a
+            class="text-sky-600 underline"
+            href="mailto:compsci@twilight.horse">compsci@twilight.horse</a
+        > or on <a
+            class="text-sky-600 underline"
+            target="_blank"
+            href="https://discord.com/users/472530726613549066">Discord</a
+        >.
+    </p>
+    <form
+        class="grid gap-2 my-2"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+    >
+        <input
+            type="hidden"
+            name="access_key"
+            value="1e95b090-b0e9-456f-9e3d-da908fa010a2"
+        />
+        <div class="grid gap-1">
+            <label class="font-bold text-lg" for="name">Your Name</label>
+            <input id="name" type="text" name="name" required />
+        </div>
+        <div class="grid gap-4 lg:grid-cols-2">
+            <div class="grid gap-1">
+                <label class="font-bold text-lg" for="server-name"
+                    >Server Name</label
+                >
+                <input id="server-name" type="text" name="server_name" />
+            </div>
+            <div class="grid gap-1">
+                <label class="font-bold text-lg" for="member-count"
+                    >Member Count</label
+                >
+                <input id="member-count" type="text" name="member_count" />
+            </div>
+        </div>
+        <div class="grid gap-1">
+            <label class="font-bold text-lg" for="bot-type">Bot type</label>
+            <select id="bot-type" name="bot_type">
+                <option value="fun">Fun Bot</option>
+                <option value="utility">Utility Bot</option>
+                <option value="custom">Custom Bot</option>
+            </select>
+        </div>
+        <div class="grid gap-1">
+            <label class="font-bold text-lg" for="email">Email</label>
+            <input id="email" type="email" name="email" required />
+        </div>
+        <div class="grid gap-1">
+            <label class="font-bold text-lg" for="additional-info"
+                >Additional info (optional)</label
+            >
+            <textarea id="additional-info" name="additional_info"></textarea>
+        </div>
+        <p class="text-sm text-gray-400 mt-2">
+            By submitting this intake form, you agree to the service terms set
+            forth on this page.
+        </p>
+        <button
+            class="cursor-pointer hover:bg-purple-900/50 transition-bg duration-300 ease-in-out"
+            id="intake-form-submit"
+            type="submit">Submit</button
+        >
+    </form>
+</MainLayout>

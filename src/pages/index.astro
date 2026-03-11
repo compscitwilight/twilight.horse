@@ -1,13 +1,12 @@
 ---
 import { ExternalLink } from "@lucide/astro";
-// import moment from "moment";
 import MainLayout from "../layouts/MainLayout.astro";
 import Skill from "../components/Skill.astro";
 ---
 
 <MainLayout>
 	<div
-		class="flex flex-col sm:flex-row max-w-screen-md mx-auto justify-around items-center gap-16 sm:gap-0"
+		class="flex flex-col sm:flex-row justify-around items-center gap-16 sm:gap-0"
 	>
 		<a
 			title="art by unitxxvii"
@@ -21,6 +20,7 @@ import Skill from "../components/Skill.astro";
 				<h1 class="text-3xl font-bold">compscitwilight</h1>
 				<p>
 					developer, <a
+						class="text-sky-600 underline"
 						target="_blank"
 						href="https://www.youtube.com/@everysingletwilight"
 						>musician</a
@@ -64,14 +64,17 @@ import Skill from "../components/Skill.astro";
 		<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
 			<div class="flex">
 				<h1 class="flex-1 text-xl">PixiPony</h1>
-				<a href="https://github.com/compscitwilight/pixipony" target="_blank">
+				<a
+					href="https://github.com/compscitwilight/pixipony"
+					target="_blank"
+				>
 					<ExternalLink />
 				</a>
 			</div>
 			<div>
 				<p>
-					drop-in NPM package for creating and managing pony sprites, built on Pixi.js for express development of
-					pony web games.
+					drop-in NPM package for creating and managing pony sprites,
+					built on Pixi.js for express development of pony web games.
 				</p>
 			</div>
 			<div class="flex items-center gap-2">
@@ -100,6 +103,7 @@ import Skill from "../components/Skill.astro";
 							my personal site that you're on right now! Built
 							using Astro and hosted with Cloudflare Pages. Source
 							code available <a
+								class="text-sky-600 underline"
 								target="_blank"
 								href="https://github.com/compscitwilight/twilight.horse"
 								>here</a
@@ -124,13 +128,11 @@ import Skill from "../components/Skill.astro";
 					</div>
 					<div>
 						<p>
-							Modern <a
-								target="_blank"
-								href="https://github.com/compscitwilight/ponies.fyi"
-								>open-source</a
-							>, collaborative catalog for ponysonas and
-							fan-created characters. Built using TypeScript,
-							Next.js, Prisma, Supabase, and Cloudflare R2.
+							An open-source index of brony fandom OCs with
+							structured metadata, revision history, attribution
+							tracking, and a notability system for historically
+							significant characters. Built using TypeScript,
+							Next.js, Prisma, and Cloudflare R2.
 						</p>
 					</div>
 					<div class="flex items-center gap-2">
@@ -268,19 +270,18 @@ import Skill from "../components/Skill.astro";
 				HarmonyCon 2027) and had loads of fun.
 			</p>
 			<p class="mt-4">
-				some photos of the trip can be seen <a href="/hc2026">here</a>
+				some photos of the trip can be seen <a
+					class="text-sky-600 underline"
+					href="/hc2026">here</a
+				>
 			</p>
 		</div>
 		<div>
 			<h2 class="text-2xl">about me</h2>
 			<hr class="twilight-purple my-2" />
 			<ul class="list-disc text-lg pl-5">
-				<li>i'm 17 years old</li>
-				<li>based in the southern US</li>
-				<li>
-					i've been in the pony fandom for only 3 1/2 years (since
-					September 2022)
-				</li>
+				<li>i'm a 17 year old based in the southern US</li>
+				<li>i've been in the pony fandom since 2022</li>
 				<li>i go by CompSciTwilight, Rust, Comp, etc</li>
 				<li>
 					i am available to be part of any fandom projects, simply
@@ -288,13 +289,21 @@ import Skill from "../components/Skill.astro";
 				</li>
 			</ul>
 		</div>
-		<div>
+		<div class="text-lg">
 			<h2 class="text-2xl">get in touch</h2>
 			<hr class="twilight-purple my-2" />
-			<p class="text-lg">
-				contact me directly at <a href="mailto:compsci@twilight.horse"
+			<p>
+				contact me directly at <a
+					class="text-sky-600 underline"
+					href="mailto:compsci@twilight.horse"
 					>compsci@twilight.horse</a
 				>
+			</p>
+			<p class="mt-2">
+				interested in commissions? visit my dedicated <a
+					class="text-sky-600 underline"
+					href="/commissions">commissions</a
+				> page
 			</p>
 		</div>
 	</div>
