@@ -57,42 +57,74 @@ import ShowcaseImage from "../components/ShowcaseImage.astro";
 			</div>
 		</div>
 	</div>
+
 	<div
 		class="grid grid-cols-1 gap-8 place-content-center px-4 pt-16 mx-auto max-w-screen-md text-center"
 	>
-		<h2 class="text-2xl">currently working on</h2>
-		<hr class="twilight-purple my-2" />
-		<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-			<div class="flex">
-				<h1 class="flex-1 text-xl">Herd</h1>
-				<a href="https://herd.twilight.horse" target="_blank">
-					<ExternalLink />
-				</a>
-			</div>
-			<div class="grid gap-2">
+		<div>
+			<h2 class="text-2xl">about me</h2>
+			<hr class="twilight-purple my-2" />
+			<div class="grid gap-4">
 				<p>
-					An upcoming real-time multiplayer game where players collect
-					ponies to form herds. Featured dynamic herd formations,
-					server authoritative state, and an in-house asset manager
-					that works natively with <a
-						class="text-sky-600 underline"
-						href="https://pony.town">pony.town</a
-					>
-					sprites.
+					Hi, I go by Rust. I work on a lot of tech things, mostly
+					pony related. My main languages are TypeScript, Rust, Go, and
+					Python, but my technical skillset varies across software,
+					networking, operating systems, and theoretical comp-sci.
 				</p>
-				<p>
-					Built with Pixi.js, Vite, Tailwind, Socket.io, Express;
-					deployed with Cloudflare Pages and Cloudflare Tunnels.
-				</p>
+				<p>Below are some of my projects ranked by relevance.</p>
 			</div>
-			<div class="flex items-center gap-2">
-				<p class="text-xl">tech:</p>
-				<img class="w-[32px]" src="/skill_images/typescript.png" />
-				<img class="w-[32px]" src="/skill_images/vite.js.png" />
-				<img class="w-[32px]" src="/skill_images/react.png" />
-				<img class="w-[32px]" src="/skill_images/express.png" />
-				<img class="w-[32px]" src="/skill_images/socket.io.png" />
-				<img class="w-[32px]" src="/skill_images/postgres.png" />
+		</div>
+
+		<div>
+			<h2 class="text-2xl">featured project</h2>
+
+			<hr class="twilight-purple my-2" />
+
+			<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
+				<ShowcaseImage src="/showcase/herd.png" />
+
+				<div class="flex">
+					<h1 class="flex-1 text-xl">Herd</h1>
+
+					<a href="https://herd.twilight.horse" target="_blank">
+						<ExternalLink />
+					</a>
+				</div>
+
+				<div class="grid gap-2">
+					<p>
+						An upcoming real-time multiplayer game where players
+						collect ponies to form herds. Featured dynamic herd
+						formations, server authoritative state, and an in-house
+						asset manager that works natively with <a
+							class="text-sky-600 underline"
+							href="https://pony.town">pony.town</a
+						>
+
+						sprites.
+					</p>
+
+					<p>
+						Built with Pixi.js, Vite, Tailwind, Socket.io, Express;
+						deployed with Cloudflare Pages and Cloudflare Tunnels.
+					</p>
+				</div>
+
+				<div class="flex items-center gap-2">
+					<p class="text-xl">tech:</p>
+
+					<img class="w-[32px]" src="/skill_images/typescript.png" />
+
+					<img class="w-[32px]" src="/skill_images/vite.js.png" />
+
+					<img class="w-[32px]" src="/skill_images/react.png" />
+
+					<img class="w-[32px]" src="/skill_images/express.png" />
+
+					<img class="w-[32px]" src="/skill_images/socket.io.png" />
+
+					<img class="w-[32px]" src="/skill_images/postgres.png" />
+				</div>
 			</div>
 		</div>
 	</div>
@@ -100,38 +132,55 @@ import ShowcaseImage from "../components/ShowcaseImage.astro";
 		class="grid grid-cols-1 gap-8 place-content-center px-4 pt-16 pb-32 mx-auto max-w-screen-md text-center"
 	>
 		<div class="w-full">
-			<h2 class="text-2xl">projects!</h2>
+			<h2 class="text-2xl">other projects</h2>
 			<hr class="twilight-purple my-2" />
 			<div class="grid gap-8 my-2">
 				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
+					<ShowcaseImage src="/showcase/tpa-search.png" />
 					<div class="flex">
-						<h1 class="flex-1 text-xl">twilight.horse</h1>
-						<a href="https://twilight.horse" target="_blank">
+						<h1 class="flex-1 text-xl">The Pony Archive Search</h1>
+						<a href="https://search.twilight.horse" target="_blank">
 							<ExternalLink />
 						</a>
 					</div>
 					<div>
 						<p>
-							my personal site that you're on right now! Built
-							using Astro and hosted with Cloudflare Pages. Source
-							code available <a
+							Open-source search interface for <a
+								target="_blank"
+								href="https://theponyarchive.com"
+								>The Pony Archive</a
+							>
+							with an index of 483k+ files. Supports trigram search,
+							uploader linkage, and a public
+							<a
 								class="text-sky-600 underline"
 								target="_blank"
-								href="https://github.com/compscitwilight/twilight.horse"
-								>here</a
-							>.
+								href="https://search.twilight.horse/download"
+								>PSQL dump</a
+							>. Express backend deployed on Fly.io with a React
+							frontend deployed on Cloudflare Pages.
 						</p>
 					</div>
 					<div class="flex items-center gap-2">
 						<p class="text-xl">tech:</p>
-						<img class="w-[32px]" src="/skill_images/astro.png" />
+						<img
+							class="w-[32px]"
+							src="/skill_images/typescript.png"
+						/>
+						<img class="w-[32px]" src="/skill_images/react.png" />
+						<img class="w-[32px]" src="/skill_images/express.png" />
 						<img
 							class="w-[32px]"
 							src="/skill_images/cloudflare.png"
 						/>
+						<img
+							class="w-[32px]"
+							src="/skill_images/postgres.png"
+						/>
 					</div>
 				</div>
 				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
+					<ShowcaseImage src="/showcase/ponies.fyi.png" />
 					<div class="flex">
 						<h1 class="flex-1 text-xl">ponies.fyi</h1>
 						<a href="https://ponies.fyi" target="_blank">
@@ -158,6 +207,34 @@ import ShowcaseImage from "../components/ShowcaseImage.astro";
 							class="w-[32px]"
 							src="/skill_images/postgres.png"
 						/>
+						<img
+							class="w-[32px]"
+							src="/skill_images/cloudflare.png"
+						/>
+					</div>
+				</div>
+				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
+					<div class="flex">
+						<h1 class="flex-1 text-xl">twilight.horse</h1>
+						<a href="https://twilight.horse" target="_blank">
+							<ExternalLink />
+						</a>
+					</div>
+					<div>
+						<p>
+							my personal site that you're on right now! Built
+							using Astro and hosted with Cloudflare Pages. Source
+							code available <a
+								class="text-sky-600 underline"
+								target="_blank"
+								href="https://github.com/compscitwilight/twilight.horse"
+								>here</a
+							>.
+						</p>
+					</div>
+					<div class="flex items-center gap-2">
+						<p class="text-xl">tech:</p>
+						<img class="w-[32px]" src="/skill_images/astro.png" />
 						<img
 							class="w-[32px]"
 							src="/skill_images/cloudflare.png"
@@ -274,7 +351,7 @@ import ShowcaseImage from "../components/ShowcaseImage.astro";
 				/>
 			</div>
 		</div>
-		<div>
+		<!-- <div>
 			<h2 class="text-2xl">conventions</h2>
 			<hr class="twilight-purple my-2" />
 			<p>
@@ -287,20 +364,7 @@ import ShowcaseImage from "../components/ShowcaseImage.astro";
 					href="/hc2026">here</a
 				>
 			</p>
-		</div>
-		<div>
-			<h2 class="text-2xl">about me</h2>
-			<hr class="twilight-purple my-2" />
-			<ul class="list-disc text-lg pl-5">
-				<li>i'm a 17 year old based in the southern US</li>
-				<li>i've been in the pony fandom since 2022</li>
-				<li>i go by CompSciTwilight, Rust, Comp, etc</li>
-				<li>
-					i am available to be part of any fandom projects, simply
-					contact me using the address below
-				</li>
-			</ul>
-		</div>
+		</div> -->
 		<div class="text-lg">
 			<h2 class="text-2xl">get in touch</h2>
 			<hr class="twilight-purple my-2" />
