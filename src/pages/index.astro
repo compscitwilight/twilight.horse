@@ -3,6 +3,7 @@ import { ExternalLink } from "@lucide/astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import Skill from "../components/Skill.astro";
 import ShowcaseImage from "../components/ShowcaseImage.astro";
+import SpotifyCurrentTrack from "../components/SpotifyCurrentTrack.astro";
 ---
 
 <MainLayout>
@@ -57,6 +58,8 @@ import ShowcaseImage from "../components/ShowcaseImage.astro";
 			</div>
 		</div>
 	</div>
+
+	<SpotifyCurrentTrack />
 
 	<div
 		class="grid grid-cols-1 gap-8 place-content-center px-4 pt-16 mx-auto max-w-screen-md text-center"
