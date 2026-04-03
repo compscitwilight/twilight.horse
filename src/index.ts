@@ -2,7 +2,8 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import chalk from "chalk";
-import { credentials, getCurrentSong, refreshToken, retrieveTokens } from "./spotify.ts";
+import { getCurrentSong, refreshToken, retrieveTokens } from "./spotify.ts";
+import { getAccessToken, getRefreshToken, setAccessToken, setRefreshToken } from "./redis.ts";
 
 const server = express();
 server.use(express.json());
@@ -30,7 +31,8 @@ server.get("/callback", async (
 
 server.get("/current-track", async (request: express.Request, response: express.Response) => {
     try {
-        if (!credentials.accessToken) {
+        const accessToken = await getAccessToken();
+        if (!accessToken) {
             console.log("Access token is missing!");
             await refreshToken();
         }
@@ -43,19 +45,22 @@ server.get("/current-track", async (request: express.Request, response: express.
     }
 })
 
-server.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, async () => {
     console.log(`Spotify microservice is online at :${process.env.PORT}`);
 
-    const authUrl = new URL("https://accounts.spotify.com/authorize");
-    authUrl.searchParams.set("client_id", process.env.SPOTIFY_CLIENT_ID as string);
-    authUrl.searchParams.set("response_type", "code");
-    authUrl.searchParams.set("redirect_uri", process.env.REDIRECT_URI as string);
-
-    const scopes = [
-        "user-read-playback-state",
-        "user-read-recently-played"
-    ].join(" ");
-    authUrl.searchParams.set("scope", encodeURIComponent(scopes));
-    console.log(`Head to the following URL to begin the PKCE flow:`);
-    console.log(chalk.green.underline(authUrl.toString()));
+    const token = await getRefreshToken();
+    if (!token) {
+        console.log(chalk.redBright.bold("Spotify re-authentication is required as your refresh token is missing!"));
+        const authUrl = new URL("https://accounts.spotify.com/authorize");
+        authUrl.searchParams.set("client_id", process.env.SPOTIFY_CLIENT_ID as string);
+        authUrl.searchParams.set("response_type", "code");
+        authUrl.searchParams.set("redirect_uri", process.env.REDIRECT_URI as string);
+        const scopes = [
+            "user-read-playback-state",
+            "user-read-recently-played"
+        ].join(" ");
+        authUrl.searchParams.set("scope", encodeURIComponent(scopes));
+        console.log(`Head to the following URL to begin the PKCE flow:`);
+        console.log(chalk.green.underline(authUrl.toString()));
+    }
 });

@@ -1,10 +1,4 @@
-export const credentials = {
-    accessToken: null,
-    refreshToken: null
-} as {
-    accessToken: string | null,
-    refreshToken: string | null
-};
+import { getAccessToken, getRefreshToken, setAccessToken, setRefreshToken } from "./redis.ts";
 
 export async function retrieveTokens(code: string): Promise<void> {
     const accessTokenURI = new URL(`https://accounts.spotify.com/api/token`);
@@ -27,36 +21,38 @@ export async function retrieveTokens(code: string): Promise<void> {
     }
 
     const { access_token, refresh_token } = await accessTokenResponse.json();
-    credentials.accessToken = access_token;
-    credentials.refreshToken = refresh_token;
+    await setAccessToken(access_token);
+    await setRefreshToken(refresh_token);
 }
 
 export async function refreshToken() {
-    if (!credentials.refreshToken) throw new Error("refresh_token is missing");
+    const token = await getRefreshToken();
+    if (!token) throw new Error("refresh_token is missing");
 
     const refreshResponse = await fetch(`https://accounts.spotify.com/api/token`, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({
             grant_type: "refresh_token",
-            refresh_token: credentials.refreshToken
+            refresh_token: token
         })
     });
 
     if (!refreshResponse.ok) throw new Error(`failed to retrieve a refresh token`);
 
     const { access_token } = await refreshResponse.json();
-    credentials.accessToken = access_token;
+    await setAccessToken(access_token);
 }
 
 export async function getCurrentSong() {
-    if (!credentials.accessToken) throw new Error("access_token is missing");
+    const accessToken = await getAccessToken();
+    if (!accessToken) throw new Error("access_token is missing");
 
     const songResponse = await fetch(`https://api.spotify.com/v1/me/player/currently-playing`, {
         method: "GET",
-        headers: { "Authorization": `Bearer ${credentials.accessToken}` }
+        headers: { "Authorization": `Bearer ${accessToken}` }
     });
-    console.log(songResponse)
+
     if (songResponse.status === 204) return null;
     return await songResponse.json();
 }
