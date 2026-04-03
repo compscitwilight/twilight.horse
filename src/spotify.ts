@@ -1,12 +1,14 @@
 import { getAccessToken, getRefreshToken, setAccessToken, setRefreshToken } from "./redis.ts";
 
+const AUTH = btoa(process.env.SPOTIFY_CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET);
+
 export async function retrieveTokens(code: string): Promise<void> {
     const accessTokenURI = new URL(`https://accounts.spotify.com/api/token`);
     const accessTokenResponse = await fetch(accessTokenURI, {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
-            "Authorization": `Basic ` + btoa(process.env.SPOTIFY_CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET)
+            "Authorization": `Basic ${AUTH}`
         },
         body: new URLSearchParams({
             code,
@@ -31,13 +33,17 @@ export async function refreshToken() {
 
     const refreshResponse = await fetch(`https://accounts.spotify.com/api/token`, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Authorization": `Basic ${AUTH}`
+        },
         body: new URLSearchParams({
             grant_type: "refresh_token",
             refresh_token: token
         })
     });
 
+    console.log(refreshResponse.status);
     if (!refreshResponse.ok) throw new Error(`failed to retrieve a refresh token`);
 
     const { access_token } = await refreshResponse.json();

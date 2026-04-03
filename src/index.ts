@@ -31,13 +31,15 @@ server.get("/callback", async (
 
 server.get("/current-track", async (request: express.Request, response: express.Response) => {
     try {
-        const accessToken = await getAccessToken();
-        if (!accessToken) {
-            console.log("Access token is missing!");
-            await refreshToken();
+        const songData = await getCurrentSong();
+        if (songData && songData.error) {
+            console.log(`an error occurred while retrieving current song data: ${songData.error.message} (${songData.error.status})`);
+            if (songData.error.status === 401) {
+                console.log("Access token expired!");
+                await refreshToken();
+            }
         }
 
-        const songData = await getCurrentSong();
         return response.status(200).send(songData);
     } catch (e) {
         console.log(`failed to retrieve current track: ${e}`);
