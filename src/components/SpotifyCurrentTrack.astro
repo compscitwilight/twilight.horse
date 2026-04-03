@@ -2,20 +2,168 @@
 
 ---
 
-<div>
+<div id="spotify-current-track" class="my-2 hidden">
+    <p id="listening-status" class="text-lg text-[#1DB954]">
+        currently listening to
+    </p>
+    <div class="border-3 border-[#1DB954] rounded-md bg-neutral-800 m-auto">
+        <div class="flex gap-8 p-2">
+            <img class="" id="current-track-cover" />
 
+            <div class="grid flex-1">
+                <div class="grid self-start">
+                    <h1 class="text-red-300 text-xl" id="current-track-title">
+                        Track Title
+                    </h1>
+
+                    <div class="flex items-center gap-1">
+                        <p class="text-sm text-gray-400">by</p>
+
+                        <h2 class="text-lg" id="current-track-artist"></h2>
+                    </div>
+
+                    <div class="flex items-center gap-1">
+                        <h3 class="text-sm text-gray-400">on</h3>
+
+                        <a
+                            target="_blank"
+                            id="current-track-album"
+                            class="text-indigo-300 underline"></a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-1">
+                    <div
+                        id="progress-bar"
+                        class="self-end p-1 bg-white rounded-md"
+                    >
+                    </div>
+                    <p class="text-xs ml-auto self-end" id="progress">
+                        0:00/0:00
+                    </p>
+                </div>
+            </div>
+
+            <a
+                class="self-end"
+                href="https://ponerpics.org/images/251604?q=safe%2C+vinyl+scratch%2C+gif"
+                target="_blank"
+            >
+                <img class="w-[128px]" src="/listening.gif" />
+            </a>
+        </div>
+    </div>
 </div>
 
 <script>
-    function displayTrackInfo(data: any) {
+    import moment from "moment";
+    import { format } from "date-fns";
 
+    function displayTrackInfo(data: any) {
+        const currentTrackWidget = document.querySelector<HTMLDivElement>(
+            "#spotify-current-track",
+        );
+
+        if (!currentTrackWidget) return;
+
+        currentTrackWidget.style.display = "block";
+        currentTrackWidget.animate(
+            [
+                { opacity: 0, transform: "translateY(20px)" },
+                { opacity: 1, transform: "translateY(0)" },
+            ],
+            {
+                duration: 350,
+                easing: "ease-out",
+                fill: "forwards",
+            },
+        );
+
+        const listeningStatus =
+            document.querySelector<HTMLParagraphElement>("#listening-status");
+        if (listeningStatus)
+            listeningStatus.innerText = data.is_playing
+                ? "currently listening to"
+                : `listened to ${moment(data.timestamp).fromNow()}`;
+
+        const currentTrackCover = document.querySelector<HTMLImageElement>(
+            "#current-track-cover",
+        );
+        if (currentTrackCover) {
+            const coverData = data.item.album.images[0];
+            currentTrackCover.src = coverData.url;
+            currentTrackCover.style.width = `${coverData.width / 6}px`;
+            currentTrackCover.style.height = `${coverData.height / 6}px`;
+        }
+
+        const titleP = document.querySelector<HTMLParagraphElement>(
+            "#current-track-title",
+        );
+        if (titleP) titleP.innerText = data.item.name;
+
+        const artistP = document.querySelector<HTMLParagraphElement>(
+            "#current-track-artist",
+        );
+        if (artistP) {
+            const artists = data.item.album.artists
+                .map((artist: any) => artist.name)
+                .join(", ");
+
+            artistP.innerText = artists;
+        }
+
+        const albumP = document.querySelector<HTMLAnchorElement>(
+            "#current-track-album",
+        );
+        if (albumP) {
+            const album = data.item.album.name;
+            albumP.innerText = album;
+            albumP.href = data.item.album.external_urls.spotify;
+        }
+
+        // progress
+        const { progress_ms } = data;
+        const { duration_ms } = data.item;
+        if (progress_ms && duration_ms) {
+            const startTime = Date.now();
+
+            const progressP =
+                document.querySelector<HTMLParagraphElement>("#progress");
+
+            const progressBar =
+                document.querySelector<HTMLDivElement>("#progress-bar");
+
+            const animate = () => {
+                const elapsed = Date.now() - startTime;
+                const current = progress_ms + elapsed;
+                const percent = (current / duration_ms) * 100;
+                if (progressP)
+                    progressP.innerText = `${format(new Date(current), "mm:ss")}/${format(new Date(duration_ms), "mm:ss")}`;
+
+                if (progressBar) progressBar.style.width = `${percent}%`;
+                requestAnimationFrame(animate);
+            };
+
+            animate();
+
+            setTimeout(fetchTrackData, duration_ms - progress_ms);
+        }
     }
 
-    fetch("https://spotify.twilight.horse/current-track")
-        .then(async (response) => {
-            if (!response.ok) {
-                console.warn(`failed to retrieve current Spotify track: ${response.status}`);
-                return;
-            }
-        })
+    function fetchTrackData() {
+        fetch("https://spotify.twilight.horse/current-track").then(
+            async (response) => {
+                if (!response.ok) {
+                    console.warn(
+                        `failed to retrieve current Spotify track: ${response.status}`,
+                    );
+                    return;
+                }
+
+                response.json().then(displayTrackInfo);
+            },
+        );
+    }
+
+    fetchTrackData();
 </script>
