@@ -2,7 +2,7 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import chalk from "chalk";
-import { credentials, getCurrentSong, refreshToken, retrieveTokens } from "./spotify.js";
+import { credentials, getCurrentSong, refreshToken, retrieveTokens } from "./spotify.ts";
 
 const server = express();
 server.use(express.json());
