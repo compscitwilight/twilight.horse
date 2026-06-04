@@ -9,6 +9,33 @@
     src: url('/LexieReadable-Bold.ttf');
 }
 
+@layer utilities {
+  /* Style for WebKit Browsers (Chrome, Safari, Edge, Opera) */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #1b1b1b;
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--twilight-purple);
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #8c699f;
+  }
+
+  /* Standard rules ONLY for browsers that DO NOT support WebKit styles (like Firefox) */
+  @supports not selector(::-webkit-scrollbar) {
+    .custom-scrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: #888 #f1f1f1;
+    }
+  }
+}
+
 body {
     background-color: #212027;
     color: #fff;
