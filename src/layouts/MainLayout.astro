@@ -23,7 +23,7 @@ import "../styles/global.css";
         <title>twilight.horse</title>
     </head>
     <body
-        class="h-screen max-h-screen w-screen bg-gradient-to-b from-indigo-900/25 to-slate-900/25 text-white flex flex-col p-4 md:p-8 overflow-hidden"
+        class="md:h-screen max-h-screen w-screen bg-gradient-to-b from-indigo-900/25 to-slate-900/25 text-white flex flex-col p-4 md:p-8 overflow-hidden"
     >
         <div
             class="w-full max-w-screen-lg mx-auto flex flex-col h-full max-h-full overflow-hidden"
@@ -46,7 +46,7 @@ import "../styles/global.css";
                 </div>
             </div>
 
-            <div class="flex-1 h-full overflow-y-scroll pr-2 custom-scrollbar">
+            <div class="flex-1 md:h-full overflow-y-scroll pr-2 custom-scrollbar">
                 <slot />
             </div>
         </div>
