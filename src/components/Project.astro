@@ -13,7 +13,7 @@ const { title, imageSrc, externalLink, technology } = Astro.props as {
     {imageSrc && <ShowcaseImage src={imageSrc} />}
     <div class="flex items-center">
         <h1 class="flex-1 text-xl">{title}</h1>
-        {externalLink && <a class="bg-indigo-600 rounded px-4 py-2 font-bold transition-bg duration-300 hover:bg-indigo-700" href={externalLink}>Visit</a>}
+        {externalLink && <a class="bg-indigo-600 rounded px-4 py-2 font-bold transition-bg duration-300 hover:bg-indigo-700" href={externalLink} target="_blank">Visit</a>}
     </div>
     <div class="grid gap-2">
         <slot />
