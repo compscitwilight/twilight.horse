@@ -36,7 +36,10 @@ import Project from "../components/Project.astro";
 						</p>
 					</div>
 					<div class="mt-2">
-						<p>Full-stack developer who writes in TypeScript and Go.</p>
+						<p>
+							Full-stack developer who writes in TypeScript and
+							Go.
+						</p>
 					</div>
 					<div
 						class="flex gap-2 justify-center items-center px-16 py-4"
@@ -93,6 +96,7 @@ import Project from "../components/Project.astro";
 					imageSrc="/showcase/herd.png"
 					externalLink="https://herd.twilight.horse"
 					technology={["typescript", "vite.js", "socket.io"]}
+					date="Mar 2026"
 				>
 					<p>
 						An upcoming real-time multiplayer game where players
@@ -113,18 +117,80 @@ import Project from "../components/Project.astro";
 				</Project>
 			</div>
 
-			<div class="w-full">
+			<div>
+				<strong class="text-2xl">Latest Project</strong>
+				<hr class="twilight-purple my-2" />
+				<Project
+					title="TrashNSell.com"
+					imageSrc="/showcase/trashnsell.png"
+					technology={[
+						"typescript",
+						"next.js",
+						"postgres",
+						"google-cloud",
+					]}
+					externalLink="https://trashnsell.com"
+					date="Jun 2026"
+				>
+					<p>
+						Full-stack business website with price estimation, job
+						management systems, and integrations with the Google
+						Places and Calendar APIs for automating business
+						operations.
+					</p>
+					<p>
+						Built for TrashNSell Junk Removal in Grand Island, NE.
+					</p>
+				</Project>
+			</div>
+
+			<div>
 				<strong class="text-2xl">Other Projects</strong>
 				<hr class="twilight-purple my-2" />
 				<div class="grid gap-2">
+					<Project
+						title="TranslateYourReviews"
+						imageSrc="/showcase/translateyourreviews.png"
+						imageSize="w-[128px]"
+						externalLink="https://github.com/compscitwilight/TranslateYourReviews"
+						technology={["typescript", "express", "redis"]}
+						date="May 2026"
+					>
+						<p>
+							TypeScript-written browser extension that brings
+							DeepL integration to reviews on <a
+								class="text-sky-600 underline"
+								target="_blank"
+								href="https://rateyourmusic.com"
+								>RateYourMusic</a
+							>. Adds a translate button to reviews in foreign
+							languages on the releases page UI, caches
+							translations on a custom proxy, and detects multiple
+							languages.
+						</p>
+						<p>
+							Available on the <a
+								class="text-sky-600 underline"
+								href="https://chromewebstore.google.com/detail/translateyourreviews/afidebkjbnljodfoleehhhendihaijlj"
+								target="_blank">Chrome Web Store</a
+							> and the <a
+								class="text-sky-600 underline"
+								href="https://addons.mozilla.org/en-US/firefox/addon/translateyourreviews/"
+								target="_blank">Mozilla Addons Store</a
+							>.
+						</p>
+					</Project>
+
 					<Project
 						title="pipette"
 						imageSrc="/showcase/pipette.png"
 						externalLink="https://github.com/compscitwilight/pipette"
 						technology={["go"]}
+						date="May 2026"
 					>
 						<p>
-							Batch file movement utility for capacity-constrained block devices.
+							Batch file movement utility for capacity-constrained
+							block devices.
 						</p>
 					</Project>
 
@@ -138,6 +204,7 @@ import Project from "../components/Project.astro";
 							"express",
 							"postgres",
 						]}
+						date="Apr 2026"
 					>
 						<p>
 							Open-source search interface for <a
@@ -169,6 +236,7 @@ import Project from "../components/Project.astro";
 							"postgres",
 							"cloudflare",
 						]}
+						date="Feb 2026"
 					>
 						<p>
 							An open-source index of brony fandom OCs with
@@ -183,6 +251,7 @@ import Project from "../components/Project.astro";
 						title="twilight.horse"
 						externalLink="https://twilight.horse"
 						technology={["astro", "cloudflare"]}
+						date="Feb 2026"
 					>
 						<p>
 							my personal site that you're on right now! Built
@@ -205,6 +274,7 @@ import Project from "../components/Project.astro";
 							"postgres",
 							"cloudflare",
 						]}
+						date="Dec 2025"
 					>
 						<p>
 							Platform for archiving pony fandom content. Built

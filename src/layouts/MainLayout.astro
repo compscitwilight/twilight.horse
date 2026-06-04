@@ -2,35 +2,50 @@
 import "../styles/global.css";
 ---
 
-<html lang="en" class="h-screen overflow-hidden"> <head>
+<html lang="en" class="h-screen overflow-hidden">
+    <head>
         <meta charset="utf-8" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <meta name="title" content="twilight.horse" />
-        <meta name="description" content="Developer and student who likes to make pony-related things." />
+        <meta
+            name="description"
+            content="Developer and student who likes to make pony-related things."
+        />
         <meta name="author" content="compscitwilight" />
-        <meta name="keywords" content="twilight.horse, compscitwilight, pony developer, brony developer" />
+        <meta
+            name="keywords"
+            content="twilight.horse, compscitwilight, pony developer, brony developer"
+        />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#8D5DA4" />
         <title>twilight.horse</title>
     </head>
     <body
         class="h-screen max-h-screen w-screen bg-gradient-to-b from-indigo-900/25 to-slate-900/25 text-white flex flex-col p-4 md:p-8 overflow-hidden"
-    > <div class="w-full max-w-screen-lg mx-auto flex flex-col h-full max-h-full overflow-hidden">
-            
+    >
+        <div
+            class="w-full max-w-screen-lg mx-auto flex flex-col h-full max-h-full overflow-hidden"
+        >
             <div class="flex mb-4 items-center gap-4 text-lg flex-shrink-0">
                 <a class="flex-1" title="twilight.horse" href="/">
                     <img id="wordmark" class="h-8 w-auto" src="/wordmark.png" />
                 </a>
-                <div>
+                <div class="flex items-center gap-4">
                     <a
-                        href="/"
-                        class="text-white underline hover:text-indigo-400 transition-colors duration-333 ease-in-out"
-                    >home</a>
+                        href="mailto:compsci@twilight.horse"
+                        class="text-purple-400 underline hover:text-indigo-400 transition-colors duration-333 ease-in-out"
+                        >contact</a
+                    >
+                    <a
+                        href="https://github.com/compscitwilight/twilight.horse"
+                        class="text-green-300 underline hover:text-indigo-400 transition-colors duration-333 ease-in-out"
+                        >source</a
+                    >
                 </div>
             </div>
-            
+
             <div class="flex-1 h-full overflow-y-scroll pr-2 custom-scrollbar">
                 <slot />
             </div>

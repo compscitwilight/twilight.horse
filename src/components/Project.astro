@@ -1,18 +1,20 @@
 ---
 import ShowcaseImage from "./ShowcaseImage.astro";
 
-const { title, imageSrc, externalLink, technology } = Astro.props as {
+const { title, imageSrc, imageSize, externalLink, technology, date } = Astro.props as {
     title?: string;
     imageSrc?: string;
+    imageSize?: string;
     externalLink?: string;
     technology?: string[];
+    date?: string;
 };
 ---
 
 <div class="grid gap-2 bg-zinc-800/50 border-4 border-gray-600 p-2 rounded-lg">
-    {imageSrc && <ShowcaseImage src={imageSrc} />}
+    {imageSrc && <ShowcaseImage imageSize={imageSize} src={imageSrc} />}
     <div class="flex items-center">
-        <h1 class="flex-1 text-xl">{title}</h1>
+        <strong class="flex-1 text-xl">{title}</strong>
         {externalLink && <a class="bg-indigo-600 rounded px-4 py-2 font-bold transition-bg duration-300 hover:bg-indigo-700" href={externalLink} target="_blank">Visit</a>}
     </div>
     <div class="grid gap-2">
@@ -24,4 +26,5 @@ const { title, imageSrc, externalLink, technology } = Astro.props as {
                 technology.map((t) => <img class="w-[32px]" src={`/skill_images/${t}.png`} />)
         }
     </div>
+    {date && <i class="text-sm w-fit p-1 rounded font-bold bg-zinc-500">{date}</i>}
 </div>
