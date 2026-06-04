@@ -7,11 +7,11 @@ import Skill from "../components/Skill.astro";
 <MainLayout>
 	{/* layout > root */}
 	<div
-		class="grid grid-cols-1 md:grid-cols-2 h-screen max-h-screen overflow-y-auto md:mt-4 h-full gap-4"
+		class="grid grid-cols-1 md:grid-cols-2 md:h-screen max-h-screen overflow-y-auto md:mt-4 h-full gap-4"
 	>
 		{/* bio */}
 		<div
-			class="flex flex-col h-full max-h-full md:overflow-y-auto custom-scrollbar gap-8 px-4 mx-auto max-w-screen-md text-center"
+			class="flex flex-col w-full max-w-screen-md mx-auto text-center gap-8 px-4 pt-16 pb-12 md:h-full md:max-h-full md:overflow-y-auto custom-scrollbar md:pb-32"
 		>
 			{/* header */}
 			<div
@@ -167,7 +167,7 @@ import Skill from "../components/Skill.astro";
 
 		{/* projects */}
 		<div
-			class="custom-scrollbar md:overflow-y-scroll pr-2 grid grid-cols-1 gap-8 content-start px-4 mx-auto max-w-screen-md text-left"
+			class="grid grid-cols-1 w-full max-w-screen-md mx-auto text-left gap-8 px-4 content-start md:mt-4 md:overflow-y-auto custom-scrollbar"
 		>
 			<div>
 				<strong class="text-2xl">Featured Project</strong>
@@ -364,6 +364,8 @@ import Skill from "../components/Skill.astro";
 							Vercel.
 						</p>
 					</Project>
+
+					<div class="h-48 w-full clear-both"></div>
 				</div>
 			</div>
 		</div>
