@@ -4,291 +4,96 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Skill from "../components/Skill.astro";
 import ShowcaseImage from "../components/ShowcaseImage.astro";
 import SpotifyCurrentTrack from "../components/SpotifyCurrentTrack.astro";
+import Project from "../components/Project.astro";
 ---
 
 <MainLayout>
+	{/* layout > root */}
 	<div
-		class="flex flex-col sm:flex-row justify-around items-center gap-16 sm:gap-0"
+		class="grid grid-cols-1 md:grid-cols-2 h-full max-h-full overflow-hidden gap-4"
 	>
-		<a
-			title="art by unitxxvii"
-			href="https://derpibooru.org/3518770"
-			target="_blank"
+		{/* bio */}
+		<div
+			class="grid grid-cols-1 self-start overflow-y-none gap-8 place-content-center px-4 pt-16 pb-32 mx-auto max-w-screen-md text-center"
 		>
-			<img class="m-auto w-[256px]" src="/3518770.png" />
-		</a>
-		<div>
-			<div>
-				<h1 class="text-3xl font-bold">compscitwilight</h1>
-				<p>
-					developer, <a
-						class="text-sky-600 underline"
-						target="_blank"
-						href="https://www.youtube.com/@everysingletwilight"
-						>musician</a
-					>, & student
-				</p>
-			</div>
-			<div class="mt-2">
-				<p>i like to build and manage things pony-related.</p>
-				<p>learn more about me and my projects below!</p>
-			</div>
-			<div class="flex gap-2 justify-center items-center px-16 py-4">
-				<a href="https://github.com/compscitwilight" target="_blank">
-					<img class="w-[32px]" src="/social_images/github.png" />
-				</a>
-				<a href="https://x.com/compscitwilight" target="_blank">
-					<img class="w-[32px]" src="/social_images/twitter.png" />
-				</a>
+			<div
+				class="flex flex-col sm:flex-row justify-around items-center gap-16 sm:gap-0"
+			>
 				<a
-					href="https://discord.com/users/472530726613549066"
+					title="art by unitxxvii"
+					href="https://derpibooru.org/3518770"
 					target="_blank"
 				>
-					<img
-						class="w-[32px] text-white"
-						src="/social_images/discord.svg"
-					/>
+					<img class="m-auto w-[256px]" src="/3518770.png" />
 				</a>
-				<a
-					href="https://bsky.app/profile/compscitwilight.bsky.social"
-					target="_blank"
-				>
-					<img class="w-[32px]" src="/social_images/bluesky.svg" />
-				</a>
-				<a
-					href="https://rateyourmusic.com/~compscitwilight"
-					target="_blank"
-				>
-					<img
-						class="w-[32px] text-white"
-						src="/social_images/rym.svg"
-					/>
-				</a>
-			</div>
-		</div>
-	</div>
-
-	<!-- <SpotifyCurrentTrack /> -->
-
-	<div
-		class="grid grid-cols-1 gap-8 place-content-center px-4 mx-auto max-w-screen-md text-center"
-	>
-		<div>
-			<h2 class="text-2xl">about me</h2>
-			<hr class="twilight-purple my-2" />
-			<div class="grid gap-4">
-				<p>
-					Hi, I go by Rust. I work on a lot of tech things, mostly
-					pony related. My main languages are TypeScript, Rust, Go,
-					and Python, but my technical skillset varies across
-					software, networking, operating systems, and theoretical
-					comp-sci.
-				</p>
-				<p>Below are some of my projects ranked by relevance.</p>
-			</div>
-		</div>
-
-		<div>
-			<h2 class="text-2xl">featured project</h2>
-
-			<hr class="twilight-purple my-2" />
-
-			<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-				<ShowcaseImage src="/showcase/herd.png" />
-
-				<div class="flex">
-					<h1 class="flex-1 text-xl">Herd</h1>
-
-					<a href="https://herd.twilight.horse" target="_blank">
-						<ExternalLink />
-					</a>
-				</div>
-
-				<div class="grid gap-2">
-					<p>
-						An upcoming real-time multiplayer game where players
-						collect ponies to form herds. Featured dynamic herd
-						formations, server authoritative state, and an in-house
-						asset manager that works natively with <a
-							class="text-sky-600 underline"
-							href="https://pony.town">pony.town</a
+				<div>
+					<div>
+						<h1 class="text-3xl font-bold">compscitwilight</h1>
+						<p>
+							developer, <a
+								class="text-sky-600 underline"
+								target="_blank"
+								href="https://www.youtube.com/@everysingletwilight"
+								>musician</a
+							>, & student
+						</p>
+					</div>
+					<div class="mt-2">
+						<p>i like to build and manage things pony-related.</p>
+						<p>learn more about me and my projects below!</p>
+					</div>
+					<div
+						class="flex gap-2 justify-center items-center px-16 py-4"
+					>
+						<a
+							href="https://github.com/compscitwilight"
+							target="_blank"
 						>
-
-						sprites.
-					</p>
-
-					<p>
-						Built with Pixi.js, Vite, Tailwind, Socket.io, Express;
-						deployed with Cloudflare Pages and Cloudflare Tunnels.
-					</p>
-				</div>
-
-				<div class="flex items-center gap-2">
-					<p class="text-xl">tech:</p>
-
-					<img class="w-[32px]" src="/skill_images/typescript.png" />
-
-					<img class="w-[32px]" src="/skill_images/vite.js.png" />
-
-					<img class="w-[32px]" src="/skill_images/react.png" />
-
-					<img class="w-[32px]" src="/skill_images/express.png" />
-
-					<img class="w-[32px]" src="/skill_images/socket.io.png" />
-
-					<img class="w-[32px]" src="/skill_images/postgres.png" />
-				</div>
-			</div>
-		</div>
-	</div>
-	<div
-		class="grid grid-cols-1 gap-8 place-content-center px-4 pt-16 pb-32 mx-auto max-w-screen-md text-center"
-	>
-		<div class="w-full">
-			<h2 class="text-2xl">other projects</h2>
-			<hr class="twilight-purple my-2" />
-			<div class="grid gap-8 my-2">
-				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-					<ShowcaseImage src="/showcase/tpa-search.png" />
-					<div class="flex">
-						<h1 class="flex-1 text-xl">The Pony Archive Search</h1>
-						<a href="https://search.twilight.horse" target="_blank">
-							<ExternalLink />
+							<img
+								class="w-[32px]"
+								src="/social_images/github.png"
+							/>
 						</a>
-					</div>
-					<div>
-						<p>
-							Open-source search interface for <a
-								target="_blank"
-								href="https://theponyarchive.com"
-								>The Pony Archive</a
-							>
-							with an index of 1.2M+ files. Supports trigram search,
-							uploader linkage, and a public
-							<a
-								class="text-sky-600 underline"
-								target="_blank"
-								href="https://search.twilight.horse/download"
-								>PSQL dump</a
-							>. Express backend deployed on Fly.io with a React
-							frontend deployed on Cloudflare Pages.
-						</p>
-					</div>
-					<div class="flex items-center gap-2">
-						<p class="text-xl">tech:</p>
-						<img
-							class="w-[32px]"
-							src="/skill_images/typescript.png"
-						/>
-						<img class="w-[32px]" src="/skill_images/react.png" />
-						<img class="w-[32px]" src="/skill_images/express.png" />
-						<img
-							class="w-[32px]"
-							src="/skill_images/cloudflare.png"
-						/>
-						<img
-							class="w-[32px]"
-							src="/skill_images/postgres.png"
-						/>
-					</div>
-				</div>
-				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-					<ShowcaseImage src="/showcase/ponies.fyi.png" />
-					<div class="flex">
-						<h1 class="flex-1 text-xl">ponies.fyi</h1>
-						<a href="https://ponies.fyi" target="_blank">
-							<ExternalLink />
+						<a href="https://x.com/compscitwilight" target="_blank">
+							<img
+								class="w-[32px]"
+								src="/social_images/twitter.png"
+							/>
 						</a>
-					</div>
-					<div>
-						<p>
-							An open-source index of brony fandom OCs with
-							structured metadata, revision history, attribution
-							tracking, and a notability system for historically
-							significant characters. Built using TypeScript,
-							Next.js, Prisma, and Cloudflare R2.
-						</p>
-					</div>
-					<div class="flex items-center gap-2">
-						<p class="text-xl">tech:</p>
-						<img
-							class="w-[32px]"
-							src="/skill_images/typescript.png"
-						/>
-						<img class="w-[32px]" src="/skill_images/next.js.png" />
-						<img
-							class="w-[32px]"
-							src="/skill_images/postgres.png"
-						/>
-						<img
-							class="w-[32px]"
-							src="/skill_images/cloudflare.png"
-						/>
-					</div>
-				</div>
-				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-					<div class="flex">
-						<h1 class="flex-1 text-xl">twilight.horse</h1>
-						<a href="https://twilight.horse" target="_blank">
-							<ExternalLink />
+						<a
+							href="https://discord.com/users/472530726613549066"
+							target="_blank"
+						>
+							<img
+								class="w-[32px] text-white"
+								src="/social_images/discord.svg"
+							/>
 						</a>
-					</div>
-					<div>
-						<p>
-							my personal site that you're on right now! Built
-							using Astro and hosted with Cloudflare Pages. Source
-							code available <a
-								class="text-sky-600 underline"
-								target="_blank"
-								href="https://github.com/compscitwilight/twilight.horse"
-								>here</a
-							>.
-						</p>
-					</div>
-					<div class="flex items-center gap-2">
-						<p class="text-xl">tech:</p>
-						<img class="w-[32px]" src="/skill_images/astro.png" />
-						<img class="w-[32px]" src="/skill_images/redis.png" />
-						<img
-							class="w-[32px]"
-							src="/skill_images/cloudflare.png"
-						/>
-					</div>
-				</div>
-				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-					<div class="flex">
-						<h1 class="flex-1 text-xl">PonyAggregate</h1>
-						<a href="https://ponyaggregate.com" target="_blank">
-							<ExternalLink />
+						<a
+							href="https://bsky.app/profile/compscitwilight.bsky.social"
+							target="_blank"
+						>
+							<img
+								class="w-[32px]"
+								src="/social_images/bluesky.svg"
+							/>
 						</a>
-					</div>
-					<div>
-						<p>
-							Platform for archiving pony fandom content. Built
-							using a stack of TypeScript, Next.js, Prisma,
-							Supabase, and Cloudflare R2, and deployed with
-							Vercel.
-						</p>
-					</div>
-					<div class="flex items-center gap-2">
-						<p class="text-xl">tech:</p>
-						<img
-							class="w-[32px]"
-							src="/skill_images/typescript.png"
-						/>
-						<img class="w-[32px]" src="/skill_images/next.js.png" />
-						<img
-							class="w-[32px]"
-							src="/skill_images/postgres.png"
-						/>
-						<img
-							class="w-[32px]"
-							src="/skill_images/cloudflare.png"
-						/>
+						<a
+							href="https://rateyourmusic.com/~compscitwilight"
+							target="_blank"
+						>
+							<img
+								class="w-[32px] text-white"
+								src="/social_images/rym.svg"
+							/>
+						</a>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- <SpotifyCurrentTrack /> -->
+		<!-- 
 		<div>
 			<h2 class="text-2xl">skills</h2>
 			<hr class="twilight-purple my-2" />
@@ -364,7 +169,7 @@ import SpotifyCurrentTrack from "../components/SpotifyCurrentTrack.astro";
 					fluency="medium"
 				/>
 			</div>
-		</div>
+		</div> -->
 		<!-- <div>
 			<h2 class="text-2xl">conventions</h2>
 			<hr class="twilight-purple my-2" />
@@ -379,22 +184,110 @@ import SpotifyCurrentTrack from "../components/SpotifyCurrentTrack.astro";
 				>
 			</p>
 		</div> -->
-		<div class="text-lg">
-			<h2 class="text-2xl">get in touch</h2>
-			<hr class="twilight-purple my-2" />
-			<p>
-				contact me directly at <a
-					class="text-sky-600 underline"
-					href="mailto:compsci@twilight.horse"
-					>compsci@twilight.horse</a
+
+		{/* projects */}
+		<div
+			class="mt-4 overflow-y-auto pr-2 grid grid-cols-1 gap-8 content-start px-4 mx-auto max-w-screen-md text-left custom-scrollbar"
+		>
+			<div>
+				<h2 class="text-2xl">Featured Project</h2>
+				<hr class="twilight-purple my-2" />
+				<Project
+					title="Test"
+					imageSrc="/showcase/herd.png"
+					externalLink="https://herd.twilight.horse"
 				>
-			</p>
-			<p class="mt-2">
-				interested in commissions? visit my dedicated <a
-					class="text-sky-600 underline"
-					href="/commissions">commissions</a
-				> page
-			</p>
+					<p>
+						An upcoming real-time multiplayer game where players
+						collect ponies to form herds. Featured dynamic herd
+						formations, server authoritative state, and an in-house
+						asset manager that works natively with <a
+							class="text-sky-600 underline"
+							href="https://pony.town">pony.town</a
+						>
+
+						sprites.
+					</p>
+
+					<p>
+						Built with Pixi.js, Vite, Tailwind, Socket.io, Express;
+						deployed with Cloudflare Pages and Cloudflare Tunnels.
+					</p>
+				</Project>
+			</div>
+
+			<div class="w-full">
+				<h2 class="text-2xl">Other Projects</h2>
+				<hr class="twilight-purple my-2" />
+				<div class="grid gap-2">
+					<Project
+						title="The Pony Archive Search"
+						imageSrc="/showcase/tpa-search.png"
+						externalLink="https://search.twilight.horse"
+					>
+						<p>
+							Open-source search interface for <a
+								target="_blank"
+								href="https://theponyarchive.com"
+								>The Pony Archive</a
+							>
+
+							with an index of 1.2M+ files. Supports trigram
+							search, uploader linkage, and a public
+
+							<a
+								class="text-sky-600 underline"
+								target="_blank"
+								href="https://search.twilight.horse/download"
+								>PSQL dump</a
+							>. Express backend deployed on Fly.io with a React
+							frontend deployed on Cloudflare Pages.
+						</p>
+					</Project>
+
+					<Project
+						title="ponies.fyi"
+						imageSrc="/showcase/ponies.fyi.png"
+						externalLink="https://ponies.fyi"
+					>
+						<p>
+							An open-source index of brony fandom OCs with
+							structured metadata, revision history, attribution
+							tracking, and a notability system for historically
+							significant characters. Built using TypeScript,
+							Next.js, Prisma, and Cloudflare R2.
+						</p>
+					</Project>
+
+					<Project
+						title="twilight.horse"
+						externalLink="https://twilight.horse"
+					>
+						<p>
+							my personal site that you're on right now! Built
+							using Astro and hosted with Cloudflare Pages. Source
+							code available <a
+								class="text-sky-600 underline"
+								target="_blank"
+								href="https://github.com/compscitwilight/twilight.horse"
+								>here</a
+							>.
+						</p>
+					</Project>
+
+					<Project
+						title="PonyAggregate"
+						externalLink="https://ponyaggregate.com"
+					>
+						<p>
+							Platform for archiving pony fandom content. Built
+							using a stack of TypeScript, Next.js, Prisma,
+							Supabase, and Cloudflare R2, and deployed with
+							Vercel.
+						</p>
+					</Project>
+				</div>
+			</div>
 		</div>
 	</div>
 </MainLayout>
