@@ -36,8 +36,7 @@ import Project from "../components/Project.astro";
 						</p>
 					</div>
 					<div class="mt-2">
-						<p>i like to build and manage things pony-related.</p>
-						<p>learn more about me and my projects below!</p>
+						<p>Full-stack developer who writes in TypeScript and Go.</p>
 					</div>
 					<div
 						class="flex gap-2 justify-center items-center px-16 py-4"
@@ -90,9 +89,10 @@ import Project from "../components/Project.astro";
 				<strong class="text-2xl">Featured Project</strong>
 				<hr class="twilight-purple my-2" />
 				<Project
-					title="Test"
+					title="Herd"
 					imageSrc="/showcase/herd.png"
 					externalLink="https://herd.twilight.horse"
+					technology={["typescript", "vite.js", "socket.io"]}
 				>
 					<p>
 						An upcoming real-time multiplayer game where players
@@ -118,9 +118,26 @@ import Project from "../components/Project.astro";
 				<hr class="twilight-purple my-2" />
 				<div class="grid gap-2">
 					<Project
+						title="pipette"
+						imageSrc="/showcase/pipette.png"
+						externalLink="https://github.com/compscitwilight/pipette"
+						technology={["go"]}
+					>
+						<p>
+							Batch file movement utility for capacity-constrained block devices.
+						</p>
+					</Project>
+
+					<Project
 						title="The Pony Archive Search"
 						imageSrc="/showcase/tpa-search.png"
 						externalLink="https://search.twilight.horse"
+						technology={[
+							"typescript",
+							"react",
+							"express",
+							"postgres",
+						]}
 					>
 						<p>
 							Open-source search interface for <a
@@ -146,6 +163,12 @@ import Project from "../components/Project.astro";
 						title="ponies.fyi"
 						imageSrc="/showcase/ponies.fyi.png"
 						externalLink="https://ponies.fyi"
+						technology={[
+							"typescript",
+							"next.js",
+							"postgres",
+							"cloudflare",
+						]}
 					>
 						<p>
 							An open-source index of brony fandom OCs with
@@ -159,6 +182,7 @@ import Project from "../components/Project.astro";
 					<Project
 						title="twilight.horse"
 						externalLink="https://twilight.horse"
+						technology={["astro", "cloudflare"]}
 					>
 						<p>
 							my personal site that you're on right now! Built
@@ -175,6 +199,12 @@ import Project from "../components/Project.astro";
 					<Project
 						title="PonyAggregate"
 						externalLink="https://ponyaggregate.com"
+						technology={[
+							"typescript",
+							"next.js",
+							"postgres",
+							"cloudflare",
+						]}
 					>
 						<p>
 							Platform for archiving pony fandom content. Built
