@@ -1,0 +1,27 @@
+---
+import ShowcaseImage from "./ShowcaseImage.astro";
+
+const { title, imageSrc, externalLink, technology } = Astro.props as {
+    title?: string;
+    imageSrc?: string;
+    externalLink?: string;
+    technology?: string[];
+};
+---
+
+<div class="grid gap-2 bg-zinc-800/50 border-4 border-gray-600 p-2 rounded-lg">
+    {imageSrc && <ShowcaseImage src={imageSrc} />}
+    <div class="flex items-center">
+        <h1 class="flex-1 text-xl">{title}</h1>
+        {externalLink && <a class="bg-indigo-600 rounded px-4 py-2 font-bold transition-bg duration-300 hover:bg-indigo-700" href={externalLink}>Visit</a>}
+    </div>
+    <div class="grid gap-2">
+        <slot />
+    </div>
+    <div class="flex items-center gap-2">
+        {
+            technology &&
+                technology.map((t) => <img class="w-[32px]" src={`/skill_images/${t}.png`} />)
+        }
+    </div>
+</div>
