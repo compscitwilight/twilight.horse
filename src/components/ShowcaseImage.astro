@@ -1,9 +1,10 @@
 ---
-const { src } = Astro.props as {
-    src: string;
+const { src, imageSize } = Astro.props as {
+    src?: string;
+    imageSize?: string;
 };
 ---
 
-<a href={src} target="_blank" class="w-3/4 object-fit m-auto border border-2 border-purple-500">
-    <img src={src} />
+<a href={src} target="_blank" class="flex align-center w-full object-fit `border border-transparent rounded-lg">
+    <img class={`rounded-lg m-auto ${imageSize}`} src={src} />
 </a>

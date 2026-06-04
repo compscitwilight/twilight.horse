@@ -1,101 +1,184 @@
 ---
-import { ExternalLink } from "@lucide/astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import Project from "../components/Project.astro";
 import Skill from "../components/Skill.astro";
-import ShowcaseImage from "../components/ShowcaseImage.astro";
-import SpotifyCurrentTrack from "../components/SpotifyCurrentTrack.astro";
 ---
 
 <MainLayout>
+	{/* layout > root */}
 	<div
-		class="flex flex-col sm:flex-row justify-around items-center gap-16 sm:gap-0"
+		class="grid grid-cols-1 md:grid-cols-2 md:mt-4 h-full max-h-full overflow-hidden gap-4"
 	>
-		<a
-			title="art by unitxxvii"
-			href="https://derpibooru.org/3518770"
-			target="_blank"
+		{/* bio */}
+		<div
+			class="flex flex-col h-full max-h-full overflow-y-auto custom-scrollbar gap-8 px-4 mx-auto max-w-screen-md text-center"
 		>
-			<img class="m-auto w-[256px]" src="/3518770.png" />
-		</a>
-		<div>
-			<div>
-				<h1 class="text-3xl font-bold">compscitwilight</h1>
-				<p>
-					developer, <a
-						class="text-sky-600 underline"
-						target="_blank"
-						href="https://www.youtube.com/@everysingletwilight"
-						>musician</a
-					>, & student
-				</p>
-			</div>
-			<div class="mt-2">
-				<p>i like to build and manage things pony-related.</p>
-				<p>learn more about me and my projects below!</p>
-			</div>
-			<div class="flex gap-2 justify-center items-center px-16 py-4">
-				<a href="https://github.com/compscitwilight" target="_blank">
-					<img class="w-[32px]" src="/social_images/github.png" />
-				</a>
-				<a href="https://x.com/compscitwilight" target="_blank">
-					<img class="w-[32px]" src="/social_images/twitter.png" />
-				</a>
+			{/* header */}
+			<div
+				class="flex flex-col sm:flex-row justify-around items-center gap-16 sm:gap-0"
+			>
 				<a
-					href="https://discord.com/users/472530726613549066"
+					title="art by unitxxvii"
+					href="https://derpibooru.org/3518770"
 					target="_blank"
 				>
-					<img
-						class="w-[32px] text-white"
-						src="/social_images/discord.svg"
-					/>
+					<img class="m-auto w-[256px]" src="/3518770.png" />
 				</a>
-				<a
-					href="https://bsky.app/profile/compscitwilight.bsky.social"
-					target="_blank"
-				>
-					<img class="w-[32px]" src="/social_images/bluesky.svg" />
-				</a>
-			</div>
-		</div>
-	</div>
-
-	<SpotifyCurrentTrack />
-
-	<div
-		class="grid grid-cols-1 gap-8 place-content-center px-4 mx-auto max-w-screen-md text-center"
-	>
-		<div>
-			<h2 class="text-2xl">about me</h2>
-			<hr class="twilight-purple my-2" />
-			<div class="grid gap-4">
-				<p>
-					Hi, I go by Rust. I work on a lot of tech things, mostly
-					pony related. My main languages are TypeScript, Rust, Go,
-					and Python, but my technical skillset varies across
-					software, networking, operating systems, and theoretical
-					comp-sci.
-				</p>
-				<p>Below are some of my projects ranked by relevance.</p>
-			</div>
-		</div>
-
-		<div>
-			<h2 class="text-2xl">featured project</h2>
-
-			<hr class="twilight-purple my-2" />
-
-			<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-				<ShowcaseImage src="/showcase/herd.png" />
-
-				<div class="flex">
-					<h1 class="flex-1 text-xl">Herd</h1>
-
-					<a href="https://herd.twilight.horse" target="_blank">
-						<ExternalLink />
-					</a>
+				<div>
+					<div>
+						<h1 class="text-3xl font-bold">compscitwilight</h1>
+						<p>
+							developer, <a
+								class="text-sky-600 underline"
+								target="_blank"
+								href="https://www.youtube.com/@everysingletwilight"
+								>musician</a
+							>, & student
+						</p>
+					</div>
+					<div class="mt-2">
+						<p>
+							Full-stack developer who writes in TypeScript and
+							Go.
+						</p>
+					</div>
+					<div
+						class="flex gap-2 justify-center items-center px-16 py-4"
+					>
+						<a
+							href="https://github.com/compscitwilight"
+							target="_blank"
+						>
+							<img
+								class="w-[32px]"
+								src="/social_images/github.png"
+							/>
+						</a>
+						<a href="https://x.com/compscitwilight" target="_blank">
+							<img
+								class="w-[32px]"
+								src="/social_images/twitter.png"
+							/>
+						</a>
+						<a
+							href="https://discord.com/users/472530726613549066"
+							target="_blank"
+						>
+							<img
+								class="w-[32px] text-white"
+								src="/social_images/discord.svg"
+							/>
+						</a>
+						<a
+							href="https://rateyourmusic.com/~compscitwilight"
+							target="_blank"
+						>
+							<img
+								class="w-[32px] text-white"
+								src="/social_images/rym.svg"
+							/>
+						</a>
+					</div>
 				</div>
+			</div>
 
-				<div class="grid gap-2">
+			{/* about me */}
+			<div class="text-left">
+				<div>
+					<strong class="text-xl">About me</strong>
+					<hr class="twilight-purple my-2" />
+					<p>
+						Hi, I go by <strong>Rust</strong>. I am a computer
+						science student and full-stack developer specializing in
+						TypeScript and Go. I'm involved in web development,
+						systems engineering, real-time networking, and browser
+						extensions.
+					</p>
+				</div>
+			</div>
+
+			{/* skills */}
+			<div class="grid gap-2 text-left">
+				<div>
+					<strong class="text-xl">Programming languages</strong>
+					<div class="flex mt-1 items-center gap-2">
+						<Skill name="typescript" />
+						<Skill name="go" />
+						<Skill name="python" />
+						<Skill name="rust" />
+						<Skill name="lua" />
+						<Skill name="cs" />
+					</div>
+				</div>
+				<div>
+					<strong class="text-xl">Frameworks & Libraries</strong>
+					<div class="flex flex-wrap mt-1 items-center gap-2">
+						<Skill name="node.js" />
+						<Skill name="react" />
+						<Skill name="next.js" />
+						<Skill name="tailwind" />
+						<Skill name="sass" />
+						<Skill name="vite.js" />
+						<Skill name="socket.io" />
+						<Skill name="astro" />
+						<Skill name="express" />
+						<Skill name="vue.js" />
+						<Skill name="fastify" />
+						<Skill name="selenium" />
+						<Skill name="prisma.js" />
+						<Skill name="discord.js" />
+						<Skill name="sequelize" />
+						<Skill name="roblox-studio" />
+						<Skill name="electron" />
+					</div>
+				</div>
+				<div>
+					<strong class="text-xl">Databases & Infrastructure</strong>
+					<div class="flex mt-1 items-center gap-2">
+						<Skill name="postgres" />
+						<Skill name="redis" />
+						<Skill name="sqlite" />
+						<Skill name="docker" />
+						<Skill name="vercel" />
+						<Skill name="cloudflare" />
+						<Skill name="proxmox" />
+						<Skill name="aws" />
+					</div>
+				</div>
+				<div>
+					<strong class="text-xl">Tools & APIs</strong>
+					<div class="flex mt-1 items-center gap-2">
+						<Skill name="git" />
+						<Skill name="github" />
+						<Skill name="linux" />
+						<Skill name="debian" />
+						<Skill name="arch-linux" />
+						<Skill name="fedora" />
+						<Skill name="bash" />
+						<Skill name="google-cloud" />
+						<Skill name="vscode" />
+						<Skill name="vim" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <SpotifyCurrentTrack /> -->
+
+		{/* projects */}
+		<div
+			class="custom-scrollbar overflow-scroll pr-2 grid grid-cols-1 gap-8 content-start px-4 mx-auto max-w-screen-md text-left"
+		>
+			<div>
+				<strong class="text-2xl">Featured Project</strong>
+				<hr class="twilight-purple my-2" />
+				<Project
+					title="Herd"
+					imageSrc="/showcase/herd.png"
+					externalLink="https://herd.twilight.horse"
+					technology={["typescript", "vite.js", "socket.io"]}
+					date="Mar 2026"
+				>
 					<p>
 						An upcoming real-time multiplayer game where players
 						collect ponies to form herds. Featured dynamic herd
@@ -112,50 +195,108 @@ import SpotifyCurrentTrack from "../components/SpotifyCurrentTrack.astro";
 						Built with Pixi.js, Vite, Tailwind, Socket.io, Express;
 						deployed with Cloudflare Pages and Cloudflare Tunnels.
 					</p>
-				</div>
-
-				<div class="flex items-center gap-2">
-					<p class="text-xl">tech:</p>
-
-					<img class="w-[32px]" src="/skill_images/typescript.png" />
-
-					<img class="w-[32px]" src="/skill_images/vite.js.png" />
-
-					<img class="w-[32px]" src="/skill_images/react.png" />
-
-					<img class="w-[32px]" src="/skill_images/express.png" />
-
-					<img class="w-[32px]" src="/skill_images/socket.io.png" />
-
-					<img class="w-[32px]" src="/skill_images/postgres.png" />
-				</div>
+				</Project>
 			</div>
-		</div>
-	</div>
-	<div
-		class="grid grid-cols-1 gap-8 place-content-center px-4 pt-16 pb-32 mx-auto max-w-screen-md text-center"
-	>
-		<div class="w-full">
-			<h2 class="text-2xl">other projects</h2>
-			<hr class="twilight-purple my-2" />
-			<div class="grid gap-8 my-2">
-				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-					<ShowcaseImage src="/showcase/tpa-search.png" />
-					<div class="flex">
-						<h1 class="flex-1 text-xl">The Pony Archive Search</h1>
-						<a href="https://search.twilight.horse" target="_blank">
-							<ExternalLink />
-						</a>
-					</div>
-					<div>
+
+			<div>
+				<strong class="text-2xl">Latest Project</strong>
+				<hr class="twilight-purple my-2" />
+				<Project
+					title="TrashNSell.com"
+					imageSrc="/showcase/trashnsell.png"
+					technology={[
+						"typescript",
+						"next.js",
+						"postgres",
+						"google-cloud",
+					]}
+					externalLink="https://trashnsell.com"
+					date="Jun 2026"
+				>
+					<p>
+						Full-stack business website with price estimation, job
+						management systems, and integrations with the Google
+						Places and Calendar APIs for automating business
+						operations.
+					</p>
+					<p>
+						Built for TrashNSell Junk Removal in Grand Island, NE.
+					</p>
+				</Project>
+			</div>
+
+			<div>
+				<strong class="text-2xl">Other Projects</strong>
+				<hr class="twilight-purple my-2" />
+				<div class="grid gap-2">
+					<Project
+						title="TranslateYourReviews"
+						imageSrc="/showcase/translateyourreviews.png"
+						imageSize="w-[128px]"
+						externalLink="https://github.com/compscitwilight/TranslateYourReviews"
+						technology={["typescript", "express", "redis"]}
+						date="May 2026"
+					>
+						<p>
+							TypeScript-written browser extension that brings
+							DeepL integration to reviews on <a
+								class="text-sky-600 underline"
+								target="_blank"
+								href="https://rateyourmusic.com"
+								>RateYourMusic</a
+							>. Adds a translate button to reviews in foreign
+							languages on the releases page UI, caches
+							translations on a custom proxy, and detects multiple
+							languages.
+						</p>
+						<p>
+							Available on the <a
+								class="text-sky-600 underline"
+								href="https://chromewebstore.google.com/detail/translateyourreviews/afidebkjbnljodfoleehhhendihaijlj"
+								target="_blank">Chrome Web Store</a
+							> and the <a
+								class="text-sky-600 underline"
+								href="https://addons.mozilla.org/en-US/firefox/addon/translateyourreviews/"
+								target="_blank">Mozilla Addons Store</a
+							>.
+						</p>
+					</Project>
+
+					<Project
+						title="pipette"
+						imageSrc="/showcase/pipette.png"
+						externalLink="https://github.com/compscitwilight/pipette"
+						technology={["go"]}
+						date="May 2026"
+					>
+						<p>
+							Batch file movement utility for capacity-constrained
+							block devices.
+						</p>
+					</Project>
+
+					<Project
+						title="The Pony Archive Search"
+						imageSrc="/showcase/tpa-search.png"
+						externalLink="https://search.twilight.horse"
+						technology={[
+							"typescript",
+							"react",
+							"express",
+							"postgres",
+						]}
+						date="Apr 2026"
+					>
 						<p>
 							Open-source search interface for <a
 								target="_blank"
 								href="https://theponyarchive.com"
 								>The Pony Archive</a
 							>
-							with an index of 1.2M+ files. Supports trigram search,
-							uploader linkage, and a public
+
+							with an index of 1.2M+ files. Supports trigram
+							search, uploader linkage, and a public
+
 							<a
 								class="text-sky-600 underline"
 								target="_blank"
@@ -164,34 +305,20 @@ import SpotifyCurrentTrack from "../components/SpotifyCurrentTrack.astro";
 							>. Express backend deployed on Fly.io with a React
 							frontend deployed on Cloudflare Pages.
 						</p>
-					</div>
-					<div class="flex items-center gap-2">
-						<p class="text-xl">tech:</p>
-						<img
-							class="w-[32px]"
-							src="/skill_images/typescript.png"
-						/>
-						<img class="w-[32px]" src="/skill_images/react.png" />
-						<img class="w-[32px]" src="/skill_images/express.png" />
-						<img
-							class="w-[32px]"
-							src="/skill_images/cloudflare.png"
-						/>
-						<img
-							class="w-[32px]"
-							src="/skill_images/postgres.png"
-						/>
-					</div>
-				</div>
-				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-					<ShowcaseImage src="/showcase/ponies.fyi.png" />
-					<div class="flex">
-						<h1 class="flex-1 text-xl">ponies.fyi</h1>
-						<a href="https://ponies.fyi" target="_blank">
-							<ExternalLink />
-						</a>
-					</div>
-					<div>
+					</Project>
+
+					<Project
+						title="ponies.fyi"
+						imageSrc="/showcase/ponies.fyi.png"
+						externalLink="https://ponies.fyi"
+						technology={[
+							"typescript",
+							"next.js",
+							"postgres",
+							"cloudflare",
+						]}
+						date="Feb 2026"
+					>
 						<p>
 							An open-source index of brony fandom OCs with
 							structured metadata, revision history, attribution
@@ -199,32 +326,14 @@ import SpotifyCurrentTrack from "../components/SpotifyCurrentTrack.astro";
 							significant characters. Built using TypeScript,
 							Next.js, Prisma, and Cloudflare R2.
 						</p>
-					</div>
-					<div class="flex items-center gap-2">
-						<p class="text-xl">tech:</p>
-						<img
-							class="w-[32px]"
-							src="/skill_images/typescript.png"
-						/>
-						<img class="w-[32px]" src="/skill_images/next.js.png" />
-						<img
-							class="w-[32px]"
-							src="/skill_images/postgres.png"
-						/>
-						<img
-							class="w-[32px]"
-							src="/skill_images/cloudflare.png"
-						/>
-					</div>
-				</div>
-				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-					<div class="flex">
-						<h1 class="flex-1 text-xl">twilight.horse</h1>
-						<a href="https://twilight.horse" target="_blank">
-							<ExternalLink />
-						</a>
-					</div>
-					<div>
+					</Project>
+
+					<Project
+						title="twilight.horse"
+						externalLink="https://twilight.horse"
+						technology={["astro", "cloudflare"]}
+						date="Feb 2026"
+					>
 						<p>
 							my personal site that you're on right now! Built
 							using Astro and hosted with Cloudflare Pages. Source
@@ -235,157 +344,28 @@ import SpotifyCurrentTrack from "../components/SpotifyCurrentTrack.astro";
 								>here</a
 							>.
 						</p>
-					</div>
-					<div class="flex items-center gap-2">
-						<p class="text-xl">tech:</p>
-						<img class="w-[32px]" src="/skill_images/astro.png" />
-						<img class="w-[32px]" src="/skill_images/redis.png" />
-						<img
-							class="w-[32px]"
-							src="/skill_images/cloudflare.png"
-						/>
-					</div>
-				</div>
-				<div class="grid gap-2 bg-neutral-800/50 p-2 rounded-lg">
-					<div class="flex">
-						<h1 class="flex-1 text-xl">PonyAggregate</h1>
-						<a href="https://ponyaggregate.com" target="_blank">
-							<ExternalLink />
-						</a>
-					</div>
-					<div>
+					</Project>
+
+					<Project
+						title="PonyAggregate"
+						externalLink="https://ponyaggregate.com"
+						technology={[
+							"typescript",
+							"next.js",
+							"postgres",
+							"cloudflare",
+						]}
+						date="Dec 2025"
+					>
 						<p>
 							Platform for archiving pony fandom content. Built
 							using a stack of TypeScript, Next.js, Prisma,
 							Supabase, and Cloudflare R2, and deployed with
 							Vercel.
 						</p>
-					</div>
-					<div class="flex items-center gap-2">
-						<p class="text-xl">tech:</p>
-						<img
-							class="w-[32px]"
-							src="/skill_images/typescript.png"
-						/>
-						<img class="w-[32px]" src="/skill_images/next.js.png" />
-						<img
-							class="w-[32px]"
-							src="/skill_images/postgres.png"
-						/>
-						<img
-							class="w-[32px]"
-							src="/skill_images/cloudflare.png"
-						/>
-					</div>
+					</Project>
 				</div>
 			</div>
-		</div>
-		<div>
-			<h2 class="text-2xl">skills</h2>
-			<hr class="twilight-purple my-2" />
-			<div class="grid lg:grid-cols-2 p-2 gap-4 sm:grid-cols-1">
-				<Skill
-					name="TypeScript"
-					image="/skill_images/typescript.png"
-					fluency="expert"
-				/>
-				<Skill
-					name="Python"
-					image="/skill_images/python.png"
-					fluency="expert"
-				/>
-				<Skill
-					name="Lua"
-					image="/skill_images/lua.png"
-					fluency="expert"
-				/>
-				<Skill
-					name="Node.js"
-					image="/skill_images/node.js.png"
-					fluency="expert"
-				/>
-				<Skill
-					name="Next"
-					image="/skill_images/next.js.png"
-					fluency="expert"
-				/>
-				<Skill
-					name="React"
-					image="/skill_images/react.png"
-					fluency="expert"
-				/>
-				<Skill
-					name="PostgreSQL"
-					image="/skill_images/postgres.png"
-					fluency="experienced"
-				/>
-				<Skill
-					name="Vue"
-					image="/skill_images/vue.js.png"
-					fluency="experienced"
-				/>
-				<Skill
-					name="Go"
-					image="/skill_images/go.png"
-					fluency="experienced"
-				/>
-				<Skill
-					name="Cloudflare Workers/R2"
-					image="/skill_images/cloudflare.png"
-					fluency="experienced"
-				/>
-				<Skill
-					name="Amazon Web Services"
-					image="/skill_images/aws.png"
-					fluency="experienced"
-				/>
-				<Skill
-					name="Astro"
-					image="/skill_images/astro.png"
-					fluency="medium"
-				/>
-				<Skill
-					name="C#"
-					image="/skill_images/cs.png"
-					fluency="medium"
-				/>
-				<Skill
-					name="Rust"
-					image="/skill_images/rust.png"
-					fluency="medium"
-				/>
-			</div>
-		</div>
-		<!-- <div>
-			<h2 class="text-2xl">conventions</h2>
-			<hr class="twilight-purple my-2" />
-			<p>
-				i recently attended HarmonyCon 2026 (and plan on attending
-				HarmonyCon 2027) and had loads of fun.
-			</p>
-			<p class="mt-4">
-				some photos of the trip can be seen <a
-					class="text-sky-600 underline"
-					href="/hc2026">here</a
-				>
-			</p>
-		</div> -->
-		<div class="text-lg">
-			<h2 class="text-2xl">get in touch</h2>
-			<hr class="twilight-purple my-2" />
-			<p>
-				contact me directly at <a
-					class="text-sky-600 underline"
-					href="mailto:compsci@twilight.horse"
-					>compsci@twilight.horse</a
-				>
-			</p>
-			<p class="mt-2">
-				interested in commissions? visit my dedicated <a
-					class="text-sky-600 underline"
-					href="/commissions">commissions</a
-				> page
-			</p>
 		</div>
 	</div>
 </MainLayout>
