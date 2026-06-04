@@ -2,17 +2,19 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import SpotifyCurrentTrack from "../components/SpotifyCurrentTrack.astro";
 import Project from "../components/Project.astro";
+import Skill from "../components/Skill.astro";
 ---
 
 <MainLayout>
 	{/* layout > root */}
 	<div
-		class="grid grid-cols-1 md:grid-cols-2 h-full max-h-full overflow-hidden gap-4"
+		class="grid grid-cols-1 md:grid-cols-2 md:mt-4 h-full max-h-full overflow-hidden gap-4"
 	>
 		{/* bio */}
 		<div
-			class="grid grid-cols-1 self-start overflow-y-none gap-8 place-content-center px-4 pt-16 pb-32 mx-auto max-w-screen-md text-center"
+			class="flex flex-col h-full max-h-full overflow-y-auto custom-scrollbar gap-8 px-4 mx-auto max-w-screen-md text-center"
 		>
+			{/* header */}
 			<div
 				class="flex flex-col sm:flex-row justify-around items-center gap-16 sm:gap-0"
 			>
@@ -80,13 +82,93 @@ import Project from "../components/Project.astro";
 					</div>
 				</div>
 			</div>
+
+			{/* about me */}
+			<div class="text-left">
+				<div>
+					<strong class="text-xl">About me</strong>
+					<hr class="twilight-purple my-2" />
+					<p>
+						Hi, I go by <strong>Rust</strong>. I am a computer
+						science student and full-stack developer specializing in
+						TypeScript and Go. I'm involved in web development,
+						systems engineering, real-time networking, and browser
+						extensions.
+					</p>
+				</div>
+			</div>
+
+			{/* skills */}
+			<div class="grid gap-2 text-left">
+				<div>
+					<strong class="text-xl">Programming languages</strong>
+					<div class="flex mt-1 items-center gap-2">
+						<Skill name="typescript" />
+						<Skill name="go" />
+						<Skill name="python" />
+						<Skill name="rust" />
+						<Skill name="lua" />
+						<Skill name="cs" />
+					</div>
+				</div>
+				<div>
+					<strong class="text-xl">Frameworks & Libraries</strong>
+					<div class="flex flex-wrap mt-1 items-center gap-2">
+						<Skill name="node.js" />
+						<Skill name="react" />
+						<Skill name="next.js" />
+						<Skill name="tailwind" />
+						<Skill name="sass" />
+						<Skill name="vite.js" />
+						<Skill name="socket.io" />
+						<Skill name="astro" />
+						<Skill name="express" />
+						<Skill name="vue.js" />
+						<Skill name="fastify" />
+						<Skill name="selenium" />
+						<Skill name="prisma.js" />
+						<Skill name="discord.js" />
+						<Skill name="sequelize" />
+						<Skill name="roblox-studio" />
+						<Skill name="electron" />
+					</div>
+				</div>
+				<div>
+					<strong class="text-xl">Databases & Infrastructure</strong>
+					<div class="flex mt-1 items-center gap-2">
+						<Skill name="postgres" />
+						<Skill name="redis" />
+						<Skill name="sqlite" />
+						<Skill name="docker" />
+						<Skill name="vercel" />
+						<Skill name="cloudflare" />
+						<Skill name="proxmox" />
+						<Skill name="aws" />
+					</div>
+				</div>
+				<div>
+					<strong class="text-xl">Tools & APIs</strong>
+					<div class="flex mt-1 items-center gap-2">
+						<Skill name="git" />
+						<Skill name="github" />
+						<Skill name="linux" />
+						<Skill name="debian" />
+						<Skill name="arch-linux" />
+						<Skill name="fedora" />
+						<Skill name="bash" />
+						<Skill name="google-cloud" />
+						<Skill name="vscode" />
+						<Skill name="vim" />
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- <SpotifyCurrentTrack /> -->
 
 		{/* projects */}
 		<div
-			class="mt-4 overflow-y-auto pr-2 grid grid-cols-1 gap-8 content-start px-4 mx-auto max-w-screen-md text-left custom-scrollbar"
+			class="overflow-y-auto pr-2 grid grid-cols-1 gap-8 content-start px-4 mx-auto max-w-screen-md text-left custom-scrollbar"
 		>
 			<div>
 				<strong class="text-2xl">Featured Project</strong>
