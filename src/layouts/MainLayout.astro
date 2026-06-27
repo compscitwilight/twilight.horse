@@ -1,5 +1,49 @@
 ---
 import "../styles/global.css";
+
+const person = {
+    "@context": "https://schema.org",
+    "@type": "person",
+    "@id": "https://twilight.horse",
+    name: "compscitwilight",
+    alternateName: ["Skylar", "Rust"],
+    url: "https://twilight.horse",
+    image: "https://derpicdn.net/img/2025/1/1/3518770/full.png",
+    jobTitle: "Software Developer",
+    description:
+        "Full-stack developer and computer science student specializing in TypeScript, Go, backend systems, networking, and Linux.",
+    sameAs: [
+        "https://github.com/compscitwilight/",
+        "https://x.com/compscitwilight",
+        "https://rateyourmusic.com/~compscitwilight/",
+        "https://glitchwave.com/user/compscitwilight/",
+    ],
+    knowsAbout: [
+        "TypeScript",
+        "Go",
+        "Python",
+        "Rust",
+        "React",
+        "Next.js",
+        "Astro",
+        "Node.js",
+        "Linux",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+    ],
+};
+
+const webSite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://twilight.horse",
+    url: "https://twilight.horse",
+    name: "twilight.horse",
+    publisher: {
+        "@id": "https://twilight.horse",
+    },
+};
 ---
 
 <html lang="en" class="h-screen overflow-hidden">
@@ -20,6 +64,10 @@ import "../styles/global.css";
         />
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#8D5DA4" />
+
+        <script type="application/ld+json" set:html={person} />
+        <script type="application/ld+json" set:html={webSite} />
+
         <title>twilight.horse</title>
     </head>
     <body
