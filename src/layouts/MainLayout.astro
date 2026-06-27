@@ -65,8 +65,8 @@ const webSite = {
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#8D5DA4" />
 
-        <script type="application/ld+json" set:html={person} />
-        <script type="application/ld+json" set:html={webSite} />
+        <script type="application/ld+json" set:html={JSON.stringify(person)} />
+        <script type="application/ld+json" set:html={JSON.stringify(webSite)} />
 
         <title>twilight.horse</title>
     </head>
