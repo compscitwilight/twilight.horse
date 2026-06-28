@@ -22,7 +22,7 @@ const { title, imageSrc, imageSize, externalLink, technology, date, status } = A
 
 <div class="grid gap-2 bg-zinc-800/50 border-4 border-gray-600 p-2 rounded-lg">
     {imageSrc && <ShowcaseImage imageSize={imageSize} src={imageSrc} />}
-    <div class="flex items-center">
+    <div class="flex flex-wrap items-center">
         <div class="flex-1 flex items-center gap-2">
             <strong class="text-xl">{title}</strong>
             {status && <strong class={`project-status p-1 rounded ${StatusColorMap[status]} select-none`}>{status}</strong>}
