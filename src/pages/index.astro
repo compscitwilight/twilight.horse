@@ -167,35 +167,6 @@ import Skill from "../components/Skill.astro";
 				<strong class="text-2xl">Featured Project</strong>
 				<hr class="twilight-purple my-2" />
 				<Project
-					title="Herd"
-					imageSrc="/showcase/herd.png"
-					externalLink="https://herd.twilight.horse"
-					technology={["typescript", "vite.js", "socket.io"]}
-					date="Mar 2026"
-				>
-					<p>
-						An upcoming real-time multiplayer game where players
-						collect ponies to form herds. Featured dynamic herd
-						formations, server authoritative state, and an in-house
-						asset manager that works natively with <a
-							class="text-sky-300 underline"
-							href="https://pony.town">pony.town</a
-						>
-
-						sprites.
-					</p>
-
-					<p>
-						Built with Pixi.js, Vite, Tailwind, Socket.io, Express;
-						deployed with Cloudflare Pages and Cloudflare Tunnels.
-					</p>
-				</Project>
-			</div>
-
-			<div>
-				<strong class="text-2xl">Latest Project</strong>
-				<hr class="twilight-purple my-2" />
-				<Project
 					title="TrashNSell.com"
 					imageSrc="/showcase/trashnsell.png"
 					technology={[
@@ -205,16 +176,52 @@ import Skill from "../components/Skill.astro";
 						"google-cloud",
 					]}
 					externalLink="https://trashnsell.com"
-					date="Jun 2026 - present"
+					status="Stable"
+					date="Jun 2026 - present (stable)"
 				>
 					<p>
-						Full-stack business website with a price estimation engine, job
-						management system, applicant tracking system, internal invoice tracking system via the Square API,
-						Sentry.io integration, and integration with the Google Places and Calendar APIs
-						for automating business operations. Generated leads and increased revenue.
+						Full-stack business operations platform built for a junk
+						removal company, featuring a price estimation engine,
+						job management system, applicant tracking, and automated
+						invoicing via the Square API. Integrates Google Places
+						and Calendar APIs to streamline scheduling and customer
+						workflows, with Sentry for monitoring. Generated leads
+						and increased revenue while reducing the need for
+						speculative pricing.
 					</p>
 					<p>
 						Built for TrashNSell Junk Removal in Grand Island, NE.
+					</p>
+				</Project>
+			</div>
+
+			<div>
+				<strong class="text-2xl">Latest Project</strong>
+				<hr class="twilight-purple my-2" />
+				<Project
+					title="PonyCCG"
+					imageSrc="/showcase/ponyccg.png"
+					technology={[
+						"typescript",
+						"nuxt.js",
+						"discord.js",
+						"openai",
+						"postgres",
+					]}
+					date="Jun 2026 - present"
+					status="Development"
+				>
+					<p>
+						Full-stack MLP:CCG engine and ecosystem featuring an
+						event-driven Discord bot, deckbuilding dashboard built
+						in Nuxt.js, and automated card parsing and ruleset
+						generation via an LLM pipeline using the OpenAI API.
+					</p>
+					<p>
+						Uses a shared PostgreSQL database and Drizzle ORM,
+						Discord OAuth for cross-platform authentication, and a
+						real-time SVG viewport generator to render match
+						canvases in a Discord message.
 					</p>
 				</Project>
 			</div>
@@ -229,19 +236,20 @@ import Skill from "../components/Skill.astro";
 						imageSize="w-[128px]"
 						externalLink="https://github.com/compscitwilight/TranslateYourReviews"
 						technology={["typescript", "express", "redis"]}
-						date="May 2026"
+						date="May 2026 (v1.2)"
+						status="Stable"
 					>
 						<p>
-							TypeScript-written browser extension that brings
-							DeepL integration to reviews on <a
+							A browser extension built in TypeScript that
+							enhances <a
 								class="text-sky-300 underline"
 								target="_blank"
 								href="https://rateyourmusic.com"
 								>RateYourMusic</a
-							>. Adds a translate button to reviews in foreign
-							languages on the releases page UI, caches
-							translations on a custom proxy, and detects multiple
-							languages.
+							> by adding DeepL-powered translations directly to user
+							reviews. It detects multiple languages, injects a translate
+							button into release pages, and speeds up repeated lookups
+							with a custom caching proxy.
 						</p>
 						<p>
 							Available on the <a
@@ -261,11 +269,17 @@ import Skill from "../components/Skill.astro";
 						imageSrc="/showcase/pipette.png"
 						externalLink="https://github.com/compscitwilight/pipette"
 						technology={["go"]}
-						date="May 2026"
+						date="May 2026 (v1.0)"
+						status="Stable"
 					>
 						<p>
-							Batch file movement utility for capacity-constrained
-							block devices.
+							A command-line utility written in Go that fills
+							block devices by intelligently selecting and copying
+							files to match a target device capacity threshold.
+							Accounts for available space, skips previously
+							transferred files via device UUID caching, and
+							displays progress in the command line during
+							transfers.
 						</p>
 					</Project>
 
@@ -280,6 +294,7 @@ import Skill from "../components/Skill.astro";
 							"postgres",
 						]}
 						date="Apr 2026"
+						status="Stable"
 					>
 						<p>
 							Open-source search interface for <a
@@ -302,6 +317,33 @@ import Skill from "../components/Skill.astro";
 					</Project>
 
 					<Project
+						title="Herd"
+						imageSrc="/showcase/herd.png"
+						externalLink="https://herd.twilight.horse"
+						technology={["typescript", "vite.js", "socket.io"]}
+						date="Mar 2026 - present (under development)"
+						status="Development"
+					>
+						<p>
+							An upcoming real-time multiplayer game where players
+							collect ponies to form herds. Featured dynamic herd
+							formations, server authoritative state, and an
+							in-house asset manager that works natively with <a
+								class="text-sky-300 underline"
+								href="https://pony.town">pony.town</a
+							>
+
+							sprites.
+						</p>
+
+						<p>
+							Built with Pixi.js, Vite, Tailwind, Socket.io,
+							Express; deployed with Cloudflare Pages and
+							Cloudflare Tunnels.
+						</p>
+					</Project>
+
+					<Project
 						title="ponies.fyi"
 						imageSrc="/showcase/ponies.fyi.png"
 						externalLink="https://ponies.fyi"
@@ -311,7 +353,8 @@ import Skill from "../components/Skill.astro";
 							"postgres",
 							"cloudflare",
 						]}
-						date="Feb 2026"
+						date="Feb 2026 (stable)"
+						status="Stable"
 					>
 						<p>
 							An open-source index of brony fandom OCs with
@@ -326,7 +369,8 @@ import Skill from "../components/Skill.astro";
 						title="twilight.horse"
 						externalLink="https://twilight.horse"
 						technology={["astro", "cloudflare"]}
-						date="Feb 2026"
+						date="Feb 2026 - present (stable)"
+						status="Stable"
 					>
 						<p>
 							my personal site that you're on right now! Built
@@ -349,7 +393,8 @@ import Skill from "../components/Skill.astro";
 							"postgres",
 							"cloudflare",
 						]}
-						date="Dec 2025"
+						date="Dec 2025 (archived)"
+						status="Archived"
 					>
 						<p>
 							Platform for archiving pony fandom content. Built
