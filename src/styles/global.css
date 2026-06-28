@@ -59,6 +59,10 @@ input:focus, select:focus, textarea:focus {
     border-color: lightgreen;
 }
 
+.project-status {
+    font-family:'Courier New', Courier, monospace;
+}
+
 #wordmark {
     width: 196px;
     font-size: 300;

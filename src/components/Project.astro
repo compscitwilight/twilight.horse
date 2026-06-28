@@ -1,20 +1,32 @@
 ---
 import ShowcaseImage from "./ShowcaseImage.astro";
 
-const { title, imageSrc, imageSize, externalLink, technology, date } = Astro.props as {
+type Status = "Stable" | "Development" | "Archived";
+
+const StatusColorMap = {
+    Stable: "bg-emerald-600",
+    Development: "bg-yellow-600/85",
+    Archived: "bg-red-500"
+} satisfies Record<Status, string>;
+
+const { title, imageSrc, imageSize, externalLink, technology, date, status } = Astro.props as {
     title?: string;
     imageSrc?: string;
     imageSize?: string;
     externalLink?: string;
     technology?: string[];
     date?: string;
+    status?: Status;
 };
 ---
 
 <div class="grid gap-2 bg-zinc-800/50 border-4 border-gray-600 p-2 rounded-lg">
     {imageSrc && <ShowcaseImage imageSize={imageSize} src={imageSrc} />}
     <div class="flex items-center">
-        <strong class="flex-1 text-xl">{title}</strong>
+        <div class="flex-1 flex items-center gap-2">
+            <strong class="text-xl">{title}</strong>
+            {status && <strong class={`project-status p-1 rounded ${StatusColorMap[status]} select-none`}>{status}</strong>}
+        </div>
         {externalLink && <a class="bg-indigo-600 rounded px-4 py-2 font-bold transition-bg duration-300 hover:bg-indigo-700" href={externalLink} target="_blank">Visit</a>}
     </div>
     <div class="grid gap-2">
