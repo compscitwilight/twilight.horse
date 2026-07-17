@@ -38,17 +38,25 @@ const person = {
 ---
 
 <MainLayout>
-	<script type="application/ld+json" set:html={JSON.stringify(person)} />
+	<!-- head -->
+	<Fragment slot="head">
+		<meta
+			property="og:image"
+			content="https://twilight.horse/3518770.png"
+		/>
+		<link rel="canonical" href="https://twilight.horse/" />
+		<script type="application/ld+json" set:html={JSON.stringify(person)} />
+	</Fragment>
 
-	{/* layout > root */}
+	<!-- site content  -->
 	<div
 		class="grid grid-cols-1 md:grid-cols-2 md:h-screen max-h-screen overflow-y-auto md:mt-4 h-full gap-4"
 	>
-		{/* bio */}
+		<!-- bio  -->
 		<div
 			class="flex flex-col w-full max-w-screen-md mx-auto text-center gap-4 px-4 pt-8 pb-12 md:h-full md:max-h-full md:overflow-y-auto custom-scrollbar md:pb-32"
 		>
-			{/* header */}
+			<!-- header -->
 			<div
 				class="flex flex-col sm:flex-row justify-around items-center gap-16 sm:gap-0"
 			>

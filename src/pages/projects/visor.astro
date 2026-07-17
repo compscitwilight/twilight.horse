@@ -32,8 +32,8 @@ const softwareSourceCodeLd = {
 };
 ---
 
-<html>
-    <head>
+<MainLayout>
+    <Fragment slot="head">
         <title>Visor - twilight.horse</title>
         <meta charset="utf-8" />
         <meta
@@ -47,84 +47,84 @@ const softwareSourceCodeLd = {
             content="LLM workflow execution engine."
         />
         <meta property="og:type" content="article" />
-        
-        <script type="application/ld+json" set:html={JSON.stringify(softwareSourceCodeLd)} />
-    </head>
-    <MainLayout>
-        <div class="md:max-h-full md:overflow-y-auto pb-24 custom-scrollbar">
-            <section class="max-w-4xl max-h-screen overflow-y-auto">
-                <h1 class="mt-6 text-5xl font-black tracking-tight">Visor</h1>
+        <link rel="canonical" href="https://twilight.horse/projects/visor" />
 
-                <p class="mt-3 text-2xl text-zinc-400">
-                    LLM workflow execution engine
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(softwareSourceCodeLd)}
+        />
+    </Fragment>
+    <div class="md:max-h-full md:overflow-y-auto pb-24 custom-scrollbar">
+        <section class="max-w-4xl max-h-screen overflow-y-auto">
+            <h1 class="mt-6 text-5xl font-black tracking-tight">Visor</h1>
+
+            <p class="mt-3 text-2xl text-zinc-400">
+                LLM workflow execution engine
+            </p>
+        </section>
+
+        <!-- Features -->
+
+        <section class="mt-14">
+            <h2 class="text-3xl font-bold">Core primitives</h2>
+
+            <div class="mt-10 grid gap-6 md:grid-cols-3">
+                {
+                    features.map((feature) => (
+                        <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-7">
+                            <h3 class="text-xl font-semibold">
+                                {feature.title}
+                            </h3>
+
+                            <p class="mt-4 leading-7 text-zinc-400">
+                                {feature.description}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </section>
+
+        <!-- Gateway -->
+
+        <section class="mt-28 grid gap-12 lg:grid-cols-2">
+            <div>
+                <h2 class="text-3xl font-bold">LLM Gateway</h2>
+
+                <p class="mt-6 leading-8 text-zinc-400">
+                    Every LLM request is routed through a per-agent gateway. The
+                    gateway enforces token budgets, blocks requests once limits
+                    are exceeded, records complete audit logs, and attributes
+                    usage at both the agent and model level.
                 </p>
-            </section>
 
-            <!-- Features -->
+                <ul class="mt-8 list-disc pl-5 text-lg space-y-4 text-zinc-300">
+                    <li>Token budget enforcement</li>
+                    <li>Audit logging</li>
+                    <li>Usage attribution</li>
+                    <li>Provider abstraction</li>
+                </ul>
+            </div>
 
-            <section class="mt-14">
-                <h2 class="text-3xl font-bold">Core primitives</h2>
-
-                <div class="mt-10 grid gap-6 md:grid-cols-3">
-                    {
-                        features.map((feature) => (
-                            <div class="rounded-2xl border border-zinc-800 bg-zinc-900 p-7">
-                                <h3 class="text-xl font-semibold">
-                                    {feature.title}
-                                </h3>
-
-                                <p class="mt-4 leading-7 text-zinc-400">
-                                    {feature.description}
-                                </p>
-                            </div>
-                        ))
-                    }
-                </div>
-            </section>
-
-            <!-- Gateway -->
-
-            <section class="mt-28 grid gap-12 lg:grid-cols-2">
-                <div>
-                    <h2 class="text-3xl font-bold">LLM Gateway</h2>
-
-                    <p class="mt-6 leading-8 text-zinc-400">
-                        Every LLM request is routed through a per-agent gateway.
-                        The gateway enforces token budgets, blocks requests once
-                        limits are exceeded, records complete audit logs, and
-                        attributes usage at both the agent and model level.
-                    </p>
-
-                    <ul
-                        class="mt-8 list-disc pl-5 text-lg space-y-4 text-zinc-300"
-                    >
-                        <li>Token budget enforcement</li>
-                        <li>Audit logging</li>
-                        <li>Usage attribution</li>
-                        <li>Provider abstraction</li>
-                    </ul>
-                </div>
-
-                <pre
-                    class="overflow-auto rounded-xl border border-zinc-800 bg-zinc-900 p-6 text-sm"><code>Agent
+            <pre
+                class="overflow-auto rounded-xl border border-zinc-800 bg-zinc-900 p-6 text-sm"><code>Agent
    │
    ▼
 LLM Gateway
    │
    ▼
 Claude / GPT / Ollama</code></pre>
-            </section>
-            <section class="mt-14">
-                <h2 class="text-3xl font-bold">Execution Ledger</h2>
+        </section>
+        <section class="mt-14">
+            <h2 class="text-3xl font-bold">Execution Ledger</h2>
 
-                <p class="mt-5 max-w-3xl text-zinc-400">
-                    Every interaction becomes a transaction, enabling
-                    reproducible execution histories and accurate spend
-                    tracking.
-                </p>
+            <p class="mt-5 max-w-3xl text-zinc-400">
+                Every interaction becomes a transaction, enabling reproducible
+                execution histories and accurate spend tracking.
+            </p>
 
-                <pre
-                    class="mt-8 overflow-auto rounded-xl border border-zinc-800 bg-zinc-900 p-6"><code>{`type LLMTransaction struct {
+            <pre
+                class="mt-8 overflow-auto rounded-xl border border-zinc-800 bg-zinc-900 p-6"><code>{`type LLMTransaction struct {
   ID            int
   AgentId       int
   InputTokens   int
@@ -132,12 +132,12 @@ Claude / GPT / Ollama</code></pre>
   Model         string
   Timestamp     time.Time
 }`}</code></pre>
-            </section>
-            <section class="mt-14">
-                <h2 class="text-3xl font-bold">Architecture</h2>
+        </section>
+        <section class="mt-14">
+            <h2 class="text-3xl font-bold">Architecture</h2>
 
-                <pre
-                    class="mt-8 overflow-auto rounded-xl border border-zinc-800 bg-zinc-900 p-6 text-sm"><code>{`workflow.yml
+            <pre
+                class="mt-8 overflow-auto rounded-xl border border-zinc-800 bg-zinc-900 p-6 text-sm"><code>{`workflow.yml
 └── WorkflowVisor
     ├── Task Dependency DAG
     └── Scheduler
@@ -153,15 +153,15 @@ Claude / GPT / Ollama</code></pre>
             ├── Docker Container
             ├── LLM Gateway
             └── Persistent State`}</code></pre>
-            </section>
+        </section>
 
-            <!-- Agent Config -->
+        <!-- Agent Config -->
 
-            <section class="mt-14">
-                <h2 class="text-3xl font-bold">Agent Configuration</h2>
+        <section class="mt-14">
+            <h2 class="text-3xl font-bold">Agent Configuration</h2>
 
-                <pre
-                    class="mt-8 overflow-auto rounded-xl border border-zinc-800 bg-zinc-900 p-6"><code>{`agent:
+            <pre
+                class="mt-8 overflow-auto rounded-xl border border-zinc-800 bg-zinc-900 p-6"><code>{`agent:
   name: researcher
   model: claude-sonnet-4
   secret: claude_key
@@ -175,12 +175,12 @@ runtime:
 budget:
   max_input_tokens: 30000
   max_output_tokens: 60000`}</code></pre>
-            </section>
-            <section class="mt-14">
-                <h2 class="text-3xl font-bold">Workflow Configuration</h2>
+        </section>
+        <section class="mt-14">
+            <h2 class="text-3xl font-bold">Workflow Configuration</h2>
 
-                <pre
-                    class="mt-8 overflow-auto rounded-xl border border-zinc-800 bg-zinc-900 p-6"><code>{`workflow:
+            <pre
+                class="mt-8 overflow-auto rounded-xl border border-zinc-800 bg-zinc-900 p-6"><code>{`workflow:
   name: research-and-write
 
 steps:
@@ -189,22 +189,19 @@ steps:
 
   - id: write
     agent: writer.yml`}</code></pre>
-            </section>
-            <section class="mt-14 max-w-4xl">
-                <h2 class="text-3xl font-bold">Budget Enforcement</h2>
+        </section>
+        <section class="mt-14 max-w-4xl">
+            <h2 class="text-3xl font-bold">Budget Enforcement</h2>
 
-                <p class="mt-6 leading-8 text-zinc-400">
-                    Budget limits are enforced structurally at the LLM Gateway.
-                    If an agent exceeds its configured limit during execution,
-                    the gateway terminates the stream and returns a
-                    <code class="rounded bg-zinc-800 px-2 py-1 ml-1">
-                        402 Payment Required
-                    </code>
-                    response.
-                </p>
-            </section>
-        </div>
-    </MainLayout>
-
-
-</html>
+            <p class="mt-6 leading-8 text-zinc-400">
+                Budget limits are enforced structurally at the LLM Gateway. If
+                an agent exceeds its configured limit during execution, the
+                gateway terminates the stream and returns a
+                <code class="rounded bg-zinc-800 px-2 py-1 ml-1">
+                    402 Payment Required
+                </code>
+                response.
+            </p>
+        </section>
+    </div>
+</MainLayout>
