@@ -18,16 +18,37 @@ const features = [
     },
 ];
 
-const providers = [
-    { provider: "Anthropic", models: "claude-*", status: "✔" },
-    { provider: "OpenAI", models: "gpt-*", status: "✔" },
-];
+const softwareSourceCodeLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    name: "Visor",
+    description: "LLM workflow execution engine.",
+    programmingLanguage: "Go",
+    runtimePlatform: "Docker",
+    author: {
+        "@type": "Person",
+        name: "compscitwilight",
+    },
+};
 ---
 
 <html>
     <head>
         <title>Visor - twilight.horse</title>
         <meta charset="utf-8" />
+        <meta
+            name="description"
+            content="Visor is a LLM workflow engine with isolated Docker agent runtimes, execution ledgers, token budget enforcement, and provider-agnostic model routing"
+        />
+
+        <meta property="og:title" content="Visor" />
+        <meta
+            property="og:description"
+            content="LLM workflow execution engine."
+        />
+        <meta property="og:type" content="article" />
+        
+        <script type="application/ld+json" set:html={JSON.stringify(softwareSourceCodeLd)} />
     </head>
     <MainLayout>
         <div class="md:max-h-full md:overflow-y-auto pb-24 custom-scrollbar">
@@ -74,7 +95,9 @@ const providers = [
                         attributes usage at both the agent and model level.
                     </p>
 
-                    <ul class="mt-8 list-disc pl-5 text-lg space-y-4 text-zinc-300">
+                    <ul
+                        class="mt-8 list-disc pl-5 text-lg space-y-4 text-zinc-300"
+                    >
                         <li>Token budget enforcement</li>
                         <li>Audit logging</li>
                         <li>Usage attribution</li>
@@ -182,4 +205,6 @@ steps:
             </section>
         </div>
     </MainLayout>
+
+
 </html>
