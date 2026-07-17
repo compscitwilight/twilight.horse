@@ -2,9 +2,44 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Project from "../components/Project.astro";
 import Skill from "../components/Skill.astro";
+
+const person = {
+	"@context": "https://schema.org",
+	"@type": "person",
+	"@id": "https://twilight.horse",
+	name: "compscitwilight",
+	alternateName: ["Skylar", "Rust"],
+	url: "https://twilight.horse",
+	image: "https://derpicdn.net/img/2025/1/1/3518770/full.png",
+	jobTitle: "Software Developer",
+	description:
+		"Full-stack developer and computer science student specializing in TypeScript, Go, backend systems, networking, and Linux.",
+	sameAs: [
+		"https://github.com/compscitwilight/",
+		"https://x.com/compscitwilight",
+		"https://rateyourmusic.com/~compscitwilight/",
+		"https://glitchwave.com/user/compscitwilight/",
+	],
+	knowsAbout: [
+		"TypeScript",
+		"Go",
+		"Python",
+		"Rust",
+		"React",
+		"Next.js",
+		"Astro",
+		"Node.js",
+		"Linux",
+		"PostgreSQL",
+		"Redis",
+		"Docker",
+	],
+};
 ---
 
 <MainLayout>
+	<script type="application/ld+json" set:html={JSON.stringify(person)} />
+
 	{/* layout > root */}
 	<div
 		class="grid grid-cols-1 md:grid-cols-2 md:h-screen max-h-screen overflow-y-auto md:mt-4 h-full gap-4"
