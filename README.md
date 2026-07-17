@@ -1,4 +1,5 @@
-# twilight.horse
+![Wordmark](https://twilight.horse/wordmark.png)
+---
 Source code for my personal website: [https://twilight.horse]
 
 This is my personal portfolio website that's been abuilt with Astro. It contains my software projects and some technical writing involving web development, LLM systems, and other areas of computer science.
