@@ -1,7 +1,7 @@
 # twilight.horse
 Source code for my personal website: [https://twilight.horse]
 
-A personal portfolio and project showcase built with Astro. The site contains my software projects, technical writing, and experiments involving web development, LLM systems, and other areas of computer science.
+This is my personal portfolio website that's been abuilt with Astro. It contains my software projects and some technical writing involving web development, LLM systems, and other areas of computer science.
 
 ## Tech stack
 - [Astro](https://astro.build) - static site generation and layouts
