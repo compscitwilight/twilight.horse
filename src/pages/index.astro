@@ -40,6 +40,7 @@ const person = {
 <MainLayout>
     <!-- head -->
     <Fragment slot="head">
+        <title>compscitwilight | twilight.horse</title>
         <meta
             property="og:image"
             content="https://twilight.horse/3518770.png"
@@ -121,7 +122,7 @@ const person = {
             {/* about me */}
             <div class="text-left">
                 <div>
-                    <strong class="text-xl">About me</strong>
+                    <h2 class="font-bold text-xl">About me</h2>
                     <hr class="twilight-purple my-2" />
                     <p>
                         Hi, I go by <strong>Rust</strong> (or <strong
@@ -137,7 +138,7 @@ const person = {
             {/* skills */}
             <div class="grid gap-2 text-left">
                 <div>
-                    <strong class="text-xl">Programming languages</strong>
+                    <h2 class="text-xl font-bold">Programming languages</h2>
                     <div class="flex flex-wrap mt-1 items-center gap-2">
                         <Skill name="typescript" />
                         <Skill name="go" />
@@ -148,7 +149,7 @@ const person = {
                     </div>
                 </div>
                 <div>
-                    <strong class="text-xl">Frameworks & Libraries</strong>
+                    <h2 class="text-xl font-bold">Frameworks & Libraries</h2>
                     <div class="flex flex-wrap mt-1 items-center gap-2">
                         <Skill name="node.js" />
                         <Skill name="react" />
@@ -170,7 +171,9 @@ const person = {
                     </div>
                 </div>
                 <div>
-                    <strong class="text-xl">Databases & Infrastructure</strong>
+                    <h2 class="text-xl font-bold">
+                        Databases & Infrastructure
+                    </h2>
                     <div class="flex flex-wrap mt-1 items-center gap-2">
                         <Skill name="postgres" />
                         <Skill name="redis" />
@@ -183,7 +186,7 @@ const person = {
                     </div>
                 </div>
                 <div>
-                    <strong class="text-xl">Tools & APIs</strong>
+                    <h2 class="text-xl font-bold">Tools & APIs</h2>
                     <div class="flex flex-wrap mt-1 items-center gap-2">
                         <Skill name="git" />
                         <Skill name="github" />
@@ -207,7 +210,7 @@ const person = {
             class="grid grid-cols-1 w-full max-w-screen-md mx-auto text-left gap-8 px-4 content-start md:mt-4 md:overflow-y-auto custom-scrollbar"
         >
             <div>
-                <strong class="text-2xl">Featured Project</strong>
+                <h2 class="font-bold text-2xl">Featured Project</h2>
                 <hr class="twilight-purple my-2" />
                 <Project
                     title="TrashNSell.com"
@@ -239,7 +242,7 @@ const person = {
             </div>
 
             <div>
-                <strong class="text-2xl">Latest Project</strong>
+                <h2 class="text-2xl font-bold">Latest Project</h2>
                 <hr class="twilight-purple my-2" />
                 <Project
                     title="PonyCCG"
@@ -271,7 +274,7 @@ const person = {
             </div>
 
             <div>
-                <strong class="text-2xl">Other Projects</strong>
+                <h2 class="text-2xl font-bold">Other Projects</h2>
                 <hr class="twilight-purple my-2" />
                 <div class="grid gap-2">
                     <Project
