@@ -24,7 +24,7 @@ const { title, imageSrc, imageSize, externalLink, technology, date, status } = A
     {imageSrc && <ShowcaseImage imageSize={imageSize} src={imageSrc} />}
     <div class="flex flex-wrap items-center">
         <div class="flex-1 flex items-center gap-2">
-            <strong class="text-xl">{title}</strong>
+            <h3 class="text-xl font-bold">{title}</h3>
             {status && <strong class={`project-status p-1 rounded ${StatusColorMap[status]} select-none`}>{status}</strong>}
         </div>
         {externalLink && <a class="bg-indigo-600 rounded px-4 py-2 font-bold select-none transition-bg duration-300 hover:bg-indigo-700" href={externalLink} target="_blank">Visit</a>}
